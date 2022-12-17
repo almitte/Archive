@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+  <style>
+    * { /* Targets all elements */
+       /* Adds a padding of 10 pixels to all elements */
+      font-family: Calibri, sans-serif;
+    }
+  /* Add a hover effect to the rows of the table */
+  table tbody tr:hover {
+    background-color: #00987a4b;
+  }
+
+  /* Colorize the text in the "Status" column if it has the value "langweilig" */
+  table tbody td:nth-child(3):contains("langweilig") {
+    color: red;
+  }
+  
+    table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width:100%;
+    table-layout: fixed;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+  td, th {
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+    padding: 12px 15px;
+    text-align: center;
+
+  }
+
+  td{font-size:17px;}
+
+  th {font-size:20px;}
+  thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #dddddd;
+} 
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+  th {
+    border-top: none;
+  }
+
+  td:first-child, th:first-child {
+     border-left: none;
+  }
+
+  th:first-of-type {
+  border-top-left-radius: 10px;
+}
+th:last-of-type {
+  border-top-right-radius: 10px;
+}
+tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 10px;
+}
+tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 10px;
+}
+
+
+
+.gradient-header {
+  background-image: linear-gradient(
+  115deg,
+  hsl(168deg 100% 35%) 0%,
+  hsl(168deg 100% 29%) 39%,
+  hsl(168deg 100% 20%) 61%,
+  hsl(168deg 100% 7%) 100%
+);
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 32px; /* Increased font size */
+      border-radius: 25px; /* Added rounded corners */
+      display: flex; /* Added flexbox layout to allow for logo and text to be side by side */
+      align-items: center; /* Centers items vertically */
+      justify-content: center; /* Centers items horizontally */
+    }
+
+    .gradient-header img { /* Added styling for the logo image */
+      height: 50px; /* Sets the height of the image */
+      margin-right: 20px; /* Adds a margin between the image and the text */
+    }
+
+    .lorem-ipsum { /* Added class for Lorem Ipsum paragraph */
+      font-size: 18px; /* Sets the font size for the paragraph */
+      line-height: 1.5; /* Increases the line height for the paragraph */
+    }
+    .refresh-button { /* Added class for refresh button */
+      background-color: #009879; /* Sets the background color for the button */
+      border: none; /* Removes the border from the button */
+      color: white; /* Sets the text color for the button */
+      padding: 15px 32px; /* Adds padding to the button */
+      text-align: center; /* Centers the text in the button */
+      text-decoration: none; /* Removes the underline from the text */
+      font-size: 16px; /* Sets the font size for the button text */
+      cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+      border-radius: 25px; /* Adds rounded corners to the button */
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+
+div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
+
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/table-sorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+  <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+ 
+
+</head>
+
+<body>
+  <div class="gradient-header">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png" alt="McDonald's logo"> <!-- Added logo image -->
+    McDonald's Dashboard
+  </div>
+
+  <div class="lorem-ipsum"><div>
+    <p>Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
+      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
+      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
+      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
+      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
+
+    </p>
+     </div></div>
+     <div>
+  <button class="refresh-button" onclick="window.location.reload();">Refresh</button></div>
+  
+  
+ <div>
+    <table id="data-table" class = "sortable">
+      <thead>
+        <tr>
+          <th>Restaurant-Nummer</th>
+          <th>Adresse</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    </div> 
+  <script>
+    
+    // Replace YOUR_SHEET_ID with the ID of your Google Sheets file
+    const SHEET_ID = '1eBROkCqq9pP7DI29cFeglghBPFOJ-75ozunQGkGVprE';
+    // Replace YOUR_API_KEY with your Google API key
+    const API_KEY = 'AIzaSyAgtyYzCyesKwKsBr1Qzee0jJoFMuwONtE';
+
+    // Make a GET request to the Google Sheets API to retrieve the data for the table
+    $.ajax({
+      url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/A1:C10?key=${API_KEY}`,
+      type: 'GET',
+      success: function(response) {
+        // The response from the API includes the data for the table in the "values" property
+        const data = response.values;
+        // Iterate through the data and add a row to the table for each item
+        data.forEach(function(item) {
+          $('#data-table tbody').append(`
+            <tr>
+              <td>${item[0]}</td>
+              <td>${item[1]}</td>
+              <td>${item[2]}</td>
+            </tr>
+          `);
+        });
+      }
+    });
+    
+
+  </script>
+
+
+
+
+
+</body>
+</html>
