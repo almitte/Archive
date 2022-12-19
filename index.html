@@ -33,11 +33,9 @@
     font-size: 40px;
     text-align: left;
     color: #009879;
+    margin-bottom: 0;
   }
-  /* Colorize the text in the "Status" column if it has the value "langweilig" */
-  table tbody td:nth-child(3):contains("langweilig") {
-    color: red;
-  }
+
   
     table {
     border-collapse: collapse;
@@ -71,6 +69,9 @@
 } 
 tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
+}
+tbody tr:nth-of-type(odd) {
+    background-color: white;
 }
 
 tbody tr:last-of-type {
@@ -190,14 +191,25 @@ tr:last-of-type td:last-of-type {
 .search-input:focus {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
 
 nav {
+  border-radius: 25px;
   position: fixed;
   display: block;
   width: 100px;
   height: 100vh;
-  background-color: #333;
-  text-align: center;
+  background-color: var(--primary-color);
+  text-align: left;
 }
 
 nav .brand {
@@ -205,7 +217,6 @@ nav .brand {
   color: white;
   font-weight: 600;
   display: block;
-  background-color: var(--primary-color);
 }
 
 nav .menu {
@@ -218,28 +229,18 @@ nav .menu a {
 }
 
 nav .menu a, nav .social a {
-  color: #999;
-  -webkit-transition: color 320ms ease-in;
-  -moz-transition: color 320ms ease-in;
-  -ms-transition: color 320ms ease-in;
-  -o-transition: color 320ms ease-in;
-  transition: color 320ms ease-in;
+  color: white;
+  -webkit-transition: color 200ms ease-in;
+  -moz-transition: color 200ms ease-in;
+  -ms-transition: color 200ms ease-in;
+  -o-transition: color 200ms ease-in;
+  transition: color 200ms ease-in;
 }
 
-nav .menu a:hover, nav .menu a.active, nav .social a:hover {
-  color: #64ffda;
+nav .menu a:hover, nav .menu a.active {
+  font-weight: bold;
+  font-size:19px;
 }
-
-nav .social {
-  margin-top: 3rem;
-}
-
-nav .social a {
-  display: inline-block;
-  margin-bottom: 5px;
-}
-
-
 
 div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
 
@@ -255,6 +256,9 @@ div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
 
 <body>
   <nav>
+    <span class="brand">
+      <img src="Logo SOS IS GmbH Neu shadow_tif.webp" style = "width: 100px; margin-top:10px; margin-left:-5px;"></img>
+    </span>
     <div class="menu">
       <a href="#home" class="active scroll-page"><i class="material-icons">Home</i></a><br>
       <a href="#inprogress" class="active scroll-page"><i class="material-icons">In Progress</i></a><br>
@@ -279,10 +283,11 @@ div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
       Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
     </section id="home"> 
 <section style = "margin-left: 100px" id="inprogress"> 
-        <div>
+    <div>
         <h1>
         In Progress
-      </h1></div>
+      </h1>
+    </div>
     </p>
      <div class="search-container">
       <button class="refresh-button" onclick="window.location.reload();">Refresh</button>    
@@ -316,11 +321,21 @@ div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
     </table>
     </div> 
 </section id="inprogress"> 
+<hr style = "margin-left: 100px"></hr>
   <section style = "margin-left: 100px" id="archive"> 
+    
     <div>
     <h1>
       Archive 2022
     </h1>
+
+    <p>
+      Was zeigt diese Tabelle an?
+    </p>
+
+
+
+
   </div>
   <table id="data-table2" class = "sortable">
     <thead>
