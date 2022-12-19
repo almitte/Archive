@@ -184,6 +184,22 @@ th.medium{
   text-align: center; /* Align the elements to the center */
 }
 
+/* Style the search icon when it is clicked */
+.search-icon:active {
+  background-color: lightblue;
+}
+
+
+  /* Style the search icon */
+  .search-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url(1024px-Search_Icon.svg.png);
+    background-size: cover;
+    margin-right: 8px;
+    cursor: pointer; /* Add this line to change the cursor to a pointer when hovering over the search icon */
+  }
+
 .search-input:hover,
 .search-input:focus {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -247,22 +263,31 @@ div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  
+
+
+    <title>SOS McDonalds Dashboard</title>
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Fira+Sans:600" rel="stylesheet">
+
+
  
 
 </head>
-<nav>
+
+<body>
+  <nav>
     <span class="brand">
       <img src="Logo SOS IS GmbH Neu shadow_tif.webp" style = "width: 100px; margin-top:10px; margin-left:-5px;"></img>
     </span>
     <div class="menu">
       <a href="#home" class="active scroll-page"><i class="material-icons">Home</i></a><br>
-      <a href="#archive2023" class="scroll-page"><i class="material-icons">Archive 2023</i></a><br>
-      <a href="#archive2022" class="scroll-page"><i class="material-icons">Archive 2022</i></a><br>
+      <a href="#inprogress" class="active scroll-page"><i class="material-icons">In Progress</i></a><br>
       <hr></hr>
-      <a href="inprogress.html" class="scroll-page">⇦ Back</i></a><br>
+      <a href="archive.html" class="scroll-page"><i class="material-icons">Archive</i></a><br>
     </div>
   </nav>
 
+  
 <div class = "cont">  
   
   <section style = "margin-left: 100px" id="home"> 
@@ -273,6 +298,7 @@ div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
            <h1 style = "color:black; text-align: center; margin-top:0px;">McDonalds Dashboard</h2>
 
       </div>
+  </div>
 
   <div class="lorem-ipsum"><div>
     <p>Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
@@ -281,51 +307,10 @@ div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
       Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
       Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
     </section id="home"> 
-    <section style = "margin-left: 100px" id="archive2023"> 
-        <div>
-            <h1>
-            Archive 2023
-          </h1>
-        </div>
-        </p>
-         <div class="search-container">
-          <button class="refresh-button" onclick="window.location.reload();">Refresh</button>    
-            <form>
-            <input type="text" id="search" class="search-input" placeholder="Search">
-          </form>
-        </div>
-    
-        
-     <div>
-        <table id="data-table" class = "sortable">
-          <thead>
-            <tr>
-              <th class="long">Store</th>
-              <th>F/C</th>
-              <th class ="short">Art</th>
-              <th class = "medium">Variante</th>
-              <th class ="long">Adresse</th>
-              <th class ="short">DL</th>
-              <th class ="short">KW</th>
-              <th class = "short">Abbau</th>
-              <th>IT Tag 1</th>
-              <th>IT Tag 2</th>
-              <th>IT Tag 3</th>
-              <th>IT Tag 4</th>
-              <th>Eröffnung</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-        </div> 
-    </section id="archive2023">
-    <hr style = "margin-left: 100px; margin-top: 50px;"></hr>
-
-<section style = "margin-left: 100px" id="archive2022"> 
+<section style = "margin-left: 100px" id="inprogress"> 
     <div>
         <h1>
-        Archive 2022
+        In Progress
       </h1>
     </div>
     </p>
@@ -341,26 +326,29 @@ div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
     <table id="data-table" class = "sortable">
       <thead>
         <tr>
-            <th class="long">Store</th>
-            <th>F/C</th>
-            <th class ="short">Art</th>
-            <th class = "medium">Variante</th>
-            <th class ="long">Adresse</th>
-            <th class ="short">DL</th>
-            <th class ="short">KW</th>
-            <th class = "short">Abbau</th>
-            <th>IT Tag 1</th>
-            <th>IT Tag 2</th>
-            <th>IT Tag 3</th>
-            <th>IT Tag 4</th>
-            <th>Eröffnung</th>
+          <th class="long">Store</th>
+          <th>F/C</th>
+          <th class ="short">Art</th>
+          <th class = "medium">Variante</th>
+          <th class ="long">Adresse</th>
+          <th class ="short">DL</th>
+          <th class ="short">KW</th>
+          <th class = "short">Abbau</th>
+          <th>IT Tag 1</th>
+          <th>IT Tag 2</th>
+          <th>IT Tag 3</th>
+          <th>IT Tag 4</th>
+          <th>Eröffnung</th>
         </tr>
       </thead>
       <tbody>
       </tbody>
     </table>
     </div> 
-</section id="archive2022"> 
+</section id="inprogress"> 
+<hr style = "margin-left: 100px"></hr>
+  
+</div> 
 <script>
     
     // Replace YOUR_SHEET_ID with the ID of your Google Sheets file

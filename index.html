@@ -1,516 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+	<style>
+.go-to-button:hover {
+	background-color: #f30031;
+}
+	  
+	 </style>
 <head>
-  <title>My Website</title>
-  <style>
-    :root {
-  --primary-color: #009879;
-}
-    * { /* Targets all elements */
-       /* Adds a padding of 10 pixels to all elements */
-      font-family: Calibri, sans-serif;
-      animation: fadein 0.5s; /* Add a fade-in animation when the page loads */
-    }
-  /* Add a hover effect to the rows of the table */
-  table tbody tr:hover {
-    background-color: #00987a4b;
-  }
-
-/* Margin for entire page left 100 px but not for navbar*/
-
-
-  /* Add the fade-in animation */
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  h1{
-    font-size: 40px;
-    text-align: left;
-    color: #009879;
-    margin-bottom: 0;
-  }
-
-  
-    table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    min-width: 400px;
-    width:100%;
-    table-layout: fixed;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  }
-
-  
-
-  td, th {
-    border-left:solid black 1px;
-    border-top:solid black 1px;
-    padding: 12px 15px;
-    text-align: center;
-
-  }
-
-  td{font-size:17px;}
-
-  th {font-size:20px;}
-  thead tr {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    text-align: left;
-  }
-
-  tbody tr {
-    border-bottom: 1px solid #dddddd;
-} 
-tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-tbody tr:nth-of-type(odd) {
-    background-color: white;
-}
-
-tbody tr:last-of-type {
-    border-bottom: 2px solid var(--primary-color);
-}
-
-  th {
-    border-top: none;
-  }
-
-  td:first-child, th:first-child {
-     border-left: none;
-  }
-
-  th:first-of-type {
-  border-top-left-radius: 10px;
-}
-th:last-of-type {
-  border-top-right-radius: 10px;
-}
-tr:last-of-type td:first-of-type {
-  border-bottom-left-radius: 10px;
-}
-tr:last-of-type td:last-of-type {
-  border-bottom-right-radius: 10px;
-}
-
-th.long {
-  width: 10%;
-}
-
-th.short{
-  width:2%;
-}
-
-th.medium{
-  width:4%;
-}
-
-
-.gradient-header {
-  background-image: linear-gradient(
-  115deg,
-  hsl(168deg 100% 35%) 0%,
-  hsl(168deg 100% 29%) 39%,
-  hsl(168deg 100% 20%) 61%,
-  hsl(168deg 100% 7%) 100%
-);
-      font-family: 'Roboto', sans-serif;
-      font-weight: bold;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 32px; /* Increased font size */
-      border-radius: 25px; /* Added rounded corners */
-      display: flex; /* Added flexbox layout to allow for logo and text to be side by side */
-      align-items: center; /* Centers items vertically */
-      justify-content: center; /* Centers items horizontally */
-    }
-
-    .gradient-header img { /* Added styling for the logo image */
-      height: 50px; /* Sets the height of the image */
-      margin-right: 20px; /* Adds a margin between the image and the text */
-    }
-
-    .lorem-ipsum { /* Added class for Lorem Ipsum paragraph */
-      font-size: 18px; /* Sets the font size for the paragraph */
-      line-height: 1.5; /* Increases the line height for the paragraph */
-    }
-    .refresh-button { /* Added class for refresh button */
-      background-color: var(--primary-color); /* Sets the background color for the button */
-      border: none; /* Removes the border from the button */
-      color: white; /* Sets the text color for the button */
-      padding: 15px 32px; /* Adds padding to the button */
-      text-align: center; /* Centers the text in the button */
-      text-decoration: none; /* Removes the underline from the text */
-      font-size: 16px; /* Sets the font size for the button text */
-      cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
-      border-radius: 25px; /* Adds rounded corners to the button */
-      font-weight: bold;
-      font-size: 16px;
-    }
-    .search-input::placeholder {
-  padding: 10px;
-  font-size: 15px; /* Increase the font size to 18 pixels */
-  color: gray; /* Change the color to gray */
-}
-
-.search-input {
-  padding: 10px;
-  font-size: 15px; /* Increase the font size to 18 pixels */
-  color: gray; /* Change the color to gray */
-}
-
-    .search-input {
-      margin-top: 10px;
-      height:30px;
-      display: inline-block;
-      font-size:15px;
-  background-color: white;
-  border: 1px solid var(--primary-color);
-}
-
-.search-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center; /* Align the elements to the center */
-}
-
-/* Style the search icon when it is clicked */
-.search-icon:active {
-  background-color: lightblue;
-}
-
-
-  /* Style the search icon */
-  .search-icon {
-    width: 24px;
-    height: 24px;
-    background-image: url(1024px-Search_Icon.svg.png);
-    background-size: cover;
-    margin-right: 8px;
-    cursor: pointer; /* Add this line to change the cursor to a pointer when hovering over the search icon */
-  }
-
-.search-input:hover,
-.search-input:focus {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-a:link { text-decoration: none; }
-
-
-a:visited { text-decoration: none; }
-
-
-a:hover { text-decoration: none; }
-
-
-a:active { text-decoration: none; }
-
-nav {
-  border-radius: 25px;
-  position: fixed;
-  display: block;
-  width: 100px;
-  height: 100vh;
-  background-color: var(--primary-color);
-  text-align: left;
-}
-
-nav .brand {
-  font-size: 3rem;
-  color: white;
-  font-weight: 600;
-  display: block;
-}
-
-nav .menu {
-  display: block;
-  margin-top: 5rem;
-}
-
-nav .menu a {
-  display: block;
-}
-
-nav .menu a, nav .social a {
-  color: white;
-  -webkit-transition: color 200ms ease-in;
-  -moz-transition: color 200ms ease-in;
-  -ms-transition: color 200ms ease-in;
-  -o-transition: color 200ms ease-in;
-  transition: color 200ms ease-in;
-}
-
-nav .menu a:hover, nav .menu a.active {
-  font-weight: bold;
-  font-size:19px;
-}
-
-div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
-
-  </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
- 
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>April Template</title>
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Fira+Sans:600" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+	<script src="https://unpkg.com/animejs@2.2.0/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
+<body class="is-boxed has-animations" style = "margin-top: -100px;">
+								
+    <div class="body-wrap boxed-container">
+        <header class="site-header">
+			<div class="header-shape header-shape-1">
+				<svg width="337" height="222" viewBox="0 0 337 222" xmlns="http://www.w3.org/2000/svg">
+				    <defs>
+				        <linearGradient x1="50%" y1="55.434%" x2="50%" y2="0%" id="header-shape-1">
+				            <stop stop-color="#E0E1FE" stop-opacity="0" offset="0%"/>
+				            <stop stop-color="#E0E1FE" offset="100%"/>
+				        </linearGradient>
+				    </defs>
+				    <path d="M1103.21 0H1440v400h-400c145.927-118.557 166.997-251.89 63.21-400z" transform="translate(-1103)" fill="url(#header-shape-1)" fill-rule="evenodd"/>
+				</svg>
+			</div>
+			<div class="header-shape header-shape-2">
+				<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+				    <defs>
+				        <linearGradient x1="93.05%" y1="19.767%" x2="15.034%" y2="85.765%" id="header-shape-2">
+				            <stop stop-color="#FF3058" offset="0%"/>
+				            <stop stop-color="#FF6381" offset="100%"/>
+				        </linearGradient>
+				    </defs>
+				    <circle class="anime-element fadeup-animation" cx="64" cy="64" r="64" fill="url(#header-shape-2)" fill-rule="evenodd"/>
+				</svg>
+			</div>
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+                            <a href="#">
+								<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+									<title>April</title>
+								    <defs>
+								        <linearGradient x1="114.674%" y1="39.507%" x2="-52.998%" y2="39.507%" id="logo-a">
+								            <stop stop-color="#8D92FA" offset="0%"/>
+								            <stop stop-color="#8D92FA" stop-opacity="0" offset="100%"/>
+								        </linearGradient>
+								        <linearGradient x1="93.05%" y1="19.767%" x2="15.034%" y2="85.765%" id="logo-b">
+								            <stop stop-color="#FF3058" offset="0%"/>
+								            <stop stop-color="#FF6381" offset="100%"/>
+								        </linearGradient>
+								        <linearGradient x1="32.716%" y1="-20.176%" x2="32.716%" y2="148.747%" id="logo-c">
+								            <stop stop-color="#FF97AA" offset="0%"/>
+								            <stop stop-color="#FF97AA" stop-opacity="0" offset="100%"/>
+								        </linearGradient>
+								    </defs>
+								    
+								</svg>
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-<body>
-  <nav>
-    <span class="brand">
-      <img src="Logo SOS IS GmbH Neu shadow_tif.webp" style = "width: 100px; margin-top:10px; margin-left:-5px;"></img>
-    </span>
-    <div class="menu">
-      <a href="#home" class="active scroll-page"><i class="material-icons">Home</i></a><br>
-      <a href="#inprogress" class="active scroll-page"><i class="material-icons">In Progress</i></a><br>
-      <hr></hr>
-      <a href="archive.html" class="scroll-page"><i class="material-icons">Archive</i></a><br>
+        <main>
+            <section class="features section">
+                <div class="container">
+                    <div class="features-inner section-inner">
+                        <div class="features-header text-center">
+                            <div class="container-sm">
+								<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png" alt="McDonald's logo" style = "display: block; margin: auto auto; width:100px; text-align: center;">
+                               	<h2 class="section-title mt-0">McDonalds Dashboard</h2>
+                                <p class="section-paragraph">Hier könnten wir schreiben, was man auf dieser Seite alles so schönes findet.</p>
+                            </div>
+                        </div>
+						<div class="features-wrap" >
+							<div class="feature text-center is-revealing" style="text-align:center;">
+                                <div class="feature-inner" >
+                                    <div class="feature-icon" style="background:#FFD2DA; pointer-events: auto;" >
+										<svg width="88" height="88" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" style = "padding:17px;">
+										    <g fill="none" fill-rule="nonzero">
+										        <path d="M32.49 15.51c-2.35-2.34-5.42-3.51-8.49-3.51v12l-8.49 8.49c4.69 4.69 12.28 4.69 16.97 0 4.69-4.69 4.69-12.29.01-16.98zm-8.49-11.51c-11.05 0-20 8.95-20 20s8.95 20 20 20 20-8.96 20-20c0-11.05-8.95-20-20-20zm0 36c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16z" fill="#FF6381"/>
+										    </g>
+										</svg>
+                                    </div>
+                                    <h4 class="feature-title h3-mobile mb-8">In Progress</h4>
+                                    <p class="text-sm">Was findet man auf dieser Seite? Was findet man auf dieser Seite?</p>
+									<button class = "go-to-button" style = "margin-left: -58px; position:absolute; border: none; color: white; padding: 5px 20px; text-align: center; text-decoration: none; font-size: 16px; cursor: pointer; border-radius: 25px; font-weight: bold; background-color:#FF6381" onclick="location.href='inprogress.html';">Go to Page</button>								
+								</div>
+								
+                            </div>							
+							<div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon" style="background:#FFD8CD;">
+										<svg width="88" height="88" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" style = "padding:17px;">
+										    <g fill="none" fill-rule="nonzero">
+										        <path d="M41.09 10.45l-2.77-3.36c-.56-.66-1.39-1.09-2.32-1.09h-24c-.93 0-1.76.43-2.31 1.09l-2.77 3.36c-.58.7-.92 1.58-.92 2.55v25c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4v-25c0-.97-.34-1.85-.91-2.55zm-17.09 24.55l-11-11h7v-4h8v4h7l-11 11zm-13.75-25l1.63-2h24l1.87 2h-27.5z" fill="#FCAC96"/>
+										        <path d="M0 0h48v48h-48z" fill="#none"/>
+										    </g>
+										</svg>
+
+                                    </div>
+                                    <h4 class="feature-title h3-mobile mb-8">Archive</h4>
+                                    <p class="text-sm">Was findet man auf dieser Seite? Was findet man auf dieser Seite?</p>
+									<button class = "go-to-button" style = "margin-left: -58px; position:absolute; border: none; color: white; padding: 5px 20px; text-align: center; text-decoration: none; font-size: 16px; cursor: pointer; border-radius: 25px; font-weight: bold; background-color:#FCAC96" onclick="location.href='archive.html';">Go to Page</button>								
+								</div>
+                            </div>
+							<div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon" style="background:#C6FDF3;">
+										<svg width="88" height="88" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+										    <g fill="none" fill-rule="nonzero">
+												<line class="cls-1" x1="10" x2="10" y1="16" y2="25"/>
+
+										    </g>
+										</svg>
+                                    </div>
+                                    <h4 class="feature-title h3-mobile mb-8">Powerful</h4>
+                                    <p class="text-sm">A pseudo-Latin text used in web design, layout, and printing in place of English to emphasise design elements.</p>
+									<button class = "go-to-button" style = "margin-left: -58px; position:absolute; border: none; color: white; padding: 5px 20px; text-align: center; text-decoration: none; font-size: 16px; cursor: pointer; border-radius: 25px; font-weight: bold; background-color:#FF6381" onclick="location.href='index.html';">Go to Page</button>								
+								</div>
+                            </div>
+							<div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon" style="background:#E0E1FE;">
+										<svg width="88" height="88" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 145" style="padding:25px;">
+										    <path d="M138.702 12.2457C133.369 12.9785 128.94 13.5512 124.523 14.2069C121.545 14.6491 118.589 15.2428 115.612 15.696C114.564 15.9073 113.487 15.9359 112.428 15.7806C111.115 15.5114 109.954 14.6381 109.978 13.1771C109.969 12.1314 110.34 11.1184 111.021 10.3252C112.007 9.49923 113.168 8.90887 114.416 8.5988C116.684 7.93854 119.016 7.49816 121.323 6.97513C128.66 5.30244 135.998 3.62959 143.336 1.95648C148.98 0.661836 152.254 2.7629 152.601 8.52987C152.91 13.6774 152.671 18.864 152.531 24.0296C152.392 29.1952 152.115 34.3531 151.814 39.5103C151.666 40.8671 151.437 42.2139 151.13 43.5437C149.33 43.9405 148.626 43.0907 148.326 42.031C147.509 39.1368 146.789 36.2134 146.108 33.283C145.526 30.7863 145.057 28.2643 144.402 25.0963C143.062 26.4803 141.931 27.3865 141.122 28.5226C133.383 39.4047 125.721 50.3411 117.988 61.2278C114.371 66.3202 110.692 71.368 106.951 76.3705C105.575 78.2982 104.008 80.0816 102.273 81.6928C99.3875 84.2465 96.1334 84.3468 92.7603 82.1543C90.9622 80.9859 89.3503 79.5314 87.6505 78.2057C82.5666 74.2473 77.4096 70.399 71.4273 67.2116C70.3238 68.2169 69.276 69.2817 68.2896 70.4016C59.7451 81.217 51.2234 92.0506 42.7244 102.902C38.9949 107.641 35.299 112.409 31.4486 117.049C30.0752 118.697 28.4816 120.148 26.7126 121.36C24.5406 122.845 23.4424 122.326 20.9153 119.106C21.3507 117.985 21.8793 116.903 22.4954 115.869C35.4588 97.3431 48.4495 78.8355 61.4676 60.3469C66.9617 52.5616 69.9409 51.8023 78.1845 56.3925C83.0646 59.1112 87.6732 62.3154 92.391 65.3214C93.6458 66.1215 94.8527 66.996 96.3857 68.0447L138.702 12.2457Z" fill="#8D92FA"/>
+											<path d="M144.14 142.413C144.066 142.143 144.02 141.866 143.977 141.61C143.862 140.939 143.754 140.306 143.22 140.047C141.836 139.388 140.393 138.862 138.909 138.476C129.118 135.849 118.923 135.273 109.317 134.908C107.402 134.835 105.488 134.761 103.574 134.685C86.5995 134.017 69.0464 133.326 51.7466 134.4C41.624 135.027 31.3236 135.557 21.3627 136.069C18.5879 136.212 15.8133 136.356 13.039 136.499C12.3738 136.517 11.7083 136.482 11.0487 136.395L10.528 136.343C10.4828 136.175 10.4368 136.017 10.3935 135.868C10.2698 135.532 10.2006 135.178 10.1885 134.82C10.5365 130.283 10.8967 125.746 11.2693 121.21C11.8301 114.268 12.4103 107.089 12.9109 100.022C14.7142 74.5715 14.8732 52.1354 13.3979 31.4315C12.6935 22.1438 11.0782 12.9479 8.57533 3.97664C8.30413 3.14344 7.91184 2.3546 7.41101 1.63579C7.22087 1.33284 7.03335 1.03404 6.86971 0.734974L6.60513 0.248535L6.08449 0.435019C3.54318 1.3445 3.55287 3.24527 3.56192 4.63312V4.93656C3.5257 15.286 3.49983 25.6346 3.48431 35.9827C3.47978 38.4775 3.49271 40.9723 3.50499 43.467C3.53022 48.4313 3.55611 53.5654 3.44033 58.6061C3.10334 73.5073 2.66028 87.8934 2.11632 105.148C1.86212 113.204 1.52901 121.461 1.12605 129.688C0.959171 133.097 0.979175 137.592 2.63048 142.132L2.69515 142.307L2.84263 142.421C5.98289 144.865 9.15811 144.875 11.7111 144.862C15.0051 144.862 18.2995 144.854 21.5943 144.839C25.4105 144.828 29.2266 144.819 33.0428 144.816C57.4637 144.821 81.8842 144.834 106.305 144.853H110.614C112.605 144.853 114.597 144.862 116.591 144.879C118.66 144.891 120.766 144.904 122.881 144.904C125.043 144.904 127.215 144.891 129.37 144.85C134.166 144.72 138.941 144.173 143.642 143.213L144.325 143.084L144.14 142.413Z" fill="#4950F6"/></g><defs><clipPath id="clip0"><rect fill="white" height="48" transform="translate(0.777344)" width="48"/></clipPath></defs></svg>
+										</svg>
+                                    </div>
+									<h4 class="feature-title h3-mobile mb-8">Powerful</h4>
+                                    <p class="text-sm">A pseudo-Latin text used in web design, layout, and printing in place of English to emphasise design elements.</p>
+									<button class = "go-to-button" style = "margin-left: -58px; position:absolute; border: none; color: white; padding: 5px 20px; text-align: center; text-decoration: none; font-size: 16px; cursor: pointer; border-radius: 25px; font-weight: bold; background-color:#FF6381" onclick="location.href='index.html';">Go to Page</button>								
+								</div>
+                            </div>
+						</div>
+                    </div>
+                </div>
+            </section>
+
+			
+
+			
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer-inner has-top-divider">
+                    <div class="brand footer-brand">
+                        
+                    </div>
+                    <ul class="footer-links list-reset">
+                        <li>
+                            <a href="#">Support</a>
+                        </li>
+                    </ul>
+                    <ul class="footer-social-links list-reset">
+                        
+                    </ul>
+                    <div class="footer-copyright">&copy; 2022, all rights reserved</div>
+                </div>
+            </div>
+        </footer>
     </div>
-  </nav>
 
-<div class = "cont">  
-  
-  <section style = "margin-left: 100px" id="home"> 
- 
-  <div class="gradient-header">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png" alt="McDonald's logo"> <!-- Added logo image -->
-    McDonald's Dashboard
-  </div>
-
-  <div class="lorem-ipsum"><div>
-    <p>Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
-      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
-      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
-      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
-      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
-    </section id="home"> 
-<section style = "margin-left: 100px" id="inprogress"> 
-    <div>
-        <h1>
-        In Progress
-      </h1>
-    </div>
-    </p>
-     <div class="search-container">
-      <button class="refresh-button" onclick="window.location.reload();">Refresh</button>    
-        <form>
-        <input type="text" id="search" class="search-input" placeholder="Search">
-      </form>
-    </div>
-
-    
- <div>
-    <table id="data-table" class = "sortable">
-      <thead>
-        <tr>
-          <th class="long">Store</th>
-          <th>F/C</th>
-          <th class ="short">Art</th>
-          <th class = "medium">Variante</th>
-          <th class ="long">Adresse</th>
-          <th class ="short">DL</th>
-          <th class ="short">KW</th>
-          <th class = "short">Abbau</th>
-          <th>IT Tag 1</th>
-          <th>IT Tag 2</th>
-          <th>IT Tag 3</th>
-          <th>IT Tag 4</th>
-          <th>Eröffnung</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-    </div> 
-</section id="inprogress"> 
-<hr style = "margin-left: 100px"></hr>
-  <section style = "margin-left: 100px" id="archive"> 
-    
-    <div>
-    <h1>
-      Archive 2022
-    </h1>
-
-    <p>
-      Was zeigt diese Tabelle an?
-    </p>
-
-
-
-
-  </div>
-  <table id="data-table2" class = "sortable">
-    <thead>
-      <tr>
-        <th>Store</th>
-        <th>F/C</th>
-        <th>Art</th>
-        <th>Variante</th>
-        <th>Adresse</th>
-        <th>DL</th>
-        <th>KW</th>
-        <th>Abbau</th>
-        <th>IT Tag 1</th>
-        <th>IT Tag 2</th>
-        <th>IT Tag 3</th>
-        <th>IT Tag 4</th>
-        <th>Eröffnung</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-</section id="archive">
-</div> 
-<script>
-    
-    // Replace YOUR_SHEET_ID with the ID of your Google Sheets file
-    const SHEET_ID = '1Y5nmITD-nCh1Au4RwxMNxwgNMTke5PKaVLJKVmykilA';
-    // Replace YOUR_API_KEY with your Google API key
-    const API_KEY = 'AIzaSyAgtyYzCyesKwKsBr1Qzee0jJoFMuwONtE';
-
-    // Make a GET request to the Google Sheets API to retrieve the data for the table
-    $.ajax({
-      url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/A1:M28?key=${API_KEY}`,
-      type: 'GET',
-      success: function(response) {
-        // The response from the API includes the data for the table in the "values" property
-        const data = response.values;
-        // Iterate through the data and add a row to the table for each item
-        data.forEach(function(item) {
-          $('#data-table tbody').append(`
-            <tr>
-              <td>${item[0]}</td>
-              <td>${item[1]}</td>
-              <td>${item[2]}</td>
-              <td>${item[3]}</td>
-              <td>${item[4]}</td>
-              <td>${item[5]}</td>
-              <td>${item[6]}</td>
-              <td>${item[7]}</td>
-              <td>${item[8]}</td>
-              <td>${item[9]}</td>
-              <td>${item[10]}</td>
-              <td>${item[11]}</td>
-              <td>${item[12]}</td>
-            </tr>
-          `);
-        });
-      }
-    });
-  </script>
-
-<script>
-    
-  // Make a GET request to the Google Sheets API to retrieve the data for the table
-  $.ajax({
-    url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/A1:M28?key=${API_KEY}`,
-    type: 'GET',
-    success: function(response) {
-      // The response from the API includes the data for the table in the "values" property
-      const data = response.values;
-      // Iterate through the data and add a row to the table for each item
-      data.forEach(function(item) {
-        $('#data-table2 tbody').append(`
-          <tr>
-            <td>${item[0]}</td>
-            <td>${item[1]}</td>
-            <td>${item[2]}</td>
-            <td>${item[3]}</td>
-            <td>${item[4]}</td>
-            <td>${item[5]}</td>
-            <td>${item[6]}</td>
-            <td>${item[7]}</td>
-            <td>${item[8]}</td>
-            <td>${item[9]}</td>
-            <td>${item[10]}</td>
-            <td>${item[11]}</td>
-            <td>${item[12]}</td>
-          </tr>
-        `);
-      });
-    }
-  });
-</script>
-  <script>
-    // Get a reference to the search input
-    const searchInput = document.getElementById('search');
-  
-    // Add an event listener to the search input
-    searchInput.addEventListener('keyup', function() {
-      // Get the search term
-      const searchTerm = this.value.toLowerCase();
-  
-      // Get a reference to all the rows in the table
-      const rows = document.querySelectorAll('table tbody tr');
-  
-      // Iterate through the rows
-      rows.forEach(function(row) {
-        // Get the text content of all the cells in the row
-        const cells = row.querySelectorAll('td');
-        let cellText = '';
-        cells.forEach(function(cell) {
-          cellText += cell.textContent.toLowerCase() + ' ';
-        });
-  
-        // If the search term is not found in the cell text, hide the row
-        if (cellText.indexOf(searchTerm) === -1) {
-          row.style.display = 'none';
-        } else {
-          // Otherwise, show the row
-          row.style.display = '';
-        }
-      });
-    });
-  </script>
-
-<script>
-$(function() {
-  $('.scroll-page').on('click', function() {
-    var offset = 0;
-    var speed = 800;
-    var target = $(this.hash);
-
-    $('nav .menu a').each(function() {
-      $(this).removeClass('active');
-    });
-
-    $(this).addClass('active');
-
-    $('html, body').animate({
-      scrollTop: target.offset().top - offset
-    }, speed, 'swing'); });
-
-});
-
-$(window).scroll(function(event) {
-  var scrollPos = $(document).scrollTop();
-  console.log(scrollPos);
-  $('nav .menu a').each(function() {
-    var curLink = $(this);
-    var refElement = $(curLink.attr('href'));
-
-    if (refElement.position().top <= scrollPos + 60) {
-      $('nav .menu a').removeClass('active');
-      curLink.addClass('active');
-
-    } else {
-      curLink.removeClass('active');
-    }
-  });
-});</script>
-
+    <script src="dist/js/main.min.js"></script>
 </body>
 </html>
