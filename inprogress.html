@@ -1,356 +1,442 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>My Website</title>
   <style>
     :root {
-  --primary-color: #009879;
-}
-    * { /* Targets all elements */
-       /* Adds a padding of 10 pixels to all elements */
+      --primary-color: #009879;
+    }
+
+    * {
+      /* Targets all elements */
+      /* Adds a padding of 10 pixels to all elements */
       font-family: Calibri, sans-serif;
-      animation: fadein 0.5s; /* Add a fade-in animation when the page loads */
+      animation: fadein 0.5s;
+      /* Add a fade-in animation when the page loads */
     }
-  /* Add a hover effect to the rows of the table */
-  table tbody tr:hover {
-    background-color: #00987a4b;
-  }
 
-/* Margin for entire page left 100 px but not for navbar*/
-
-
-  /* Add the fade-in animation */
-  @keyframes fadein {
-    from {
-      opacity: 0;
+    /* Add a hover effect to the rows of the table */
+    table tbody tr:hover {
+      background-color: #00987a4b;
     }
-    to {
-      opacity: 1;
+
+    /* Margin for entire page left 100 px but not for navbar*/
+
+
+    /* Add the fade-in animation */
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
-  }
 
-  h1{
-    font-size: 40px;
-    text-align: left;
-    color: #009879;
-    margin-bottom: 0;
-  }
+    h1 {
+      font-size: 40px;
+      text-align: left;
+      color: #009879;
+      margin-bottom: 0;
+    }
 
-  
+
     table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    min-width: 400px;
-    width:100%;
-    table-layout: fixed;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  }
-
-  
-
-  td, th {
-    border-left:solid black 1px;
-    border-top:solid black 1px;
-    padding: 12px 15px;
-    text-align: center;
-
-  }
-
-  td{font-size:17px;}
-
-  th {font-size:20px;}
-  thead tr {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    text-align: left;
-  }
-
-  tbody tr {
-    border-bottom: 1px solid #dddddd;
-} 
-tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-tbody tr:nth-of-type(odd) {
-    background-color: white;
-}
-
-tbody tr:last-of-type {
-    border-bottom: 2px solid var(--primary-color);
-}
-
-  th {
-    border-top: none;
-  }
-
-  td:first-child, th:first-child {
-     border-left: none;
-  }
-
-  th:first-of-type {
-  border-top-left-radius: 10px;
-}
-th:last-of-type {
-  border-top-right-radius: 10px;
-}
-tr:last-of-type td:first-of-type {
-  border-bottom-left-radius: 10px;
-}
-tr:last-of-type td:last-of-type {
-  border-bottom-right-radius: 10px;
-}
-
-th.long {
-  width: 10%;
-}
-
-th.short{
-  width:2%;
-}
-
-th.medium{
-  width:4%;
-}
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9em;
+      min-width: 400px;
+      width: 100%;
+      table-layout: fixed;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
 
 
-.gradient-header {
-  background-image: linear-gradient(
-  115deg,
-  hsl(168deg 100% 35%) 0%,
-  hsl(168deg 100% 29%) 39%,
-  hsl(168deg 100% 20%) 61%,
-  hsl(168deg 100% 7%) 100%
-);
+
+    td,
+    th {
+      border-left: solid black 1px;
+      border-top: solid black 1px;
+      padding: 12px 15px;
+      text-align: center;
+
+    }
+
+    td {
+      font-size: 17px;
+      align-items: center;
+    }
+
+    th {
+      font-size: 20px;
+    }
+
+    thead tr {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      text-align: left;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+
+    tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+
+    tbody tr:nth-of-type(odd) {
+      background-color: white;
+    }
+
+    tbody tr:last-of-type {
+      border-bottom: 2px solid var(--primary-color);
+    }
+
+    th {
+      border-top: none;
+    }
+
+    td:first-child,
+    th:first-child {
+      border-left: none;
+    }
+
+    th:first-of-type {
+      border-top-left-radius: 10px;
+    }
+
+    th:last-of-type {
+      border-top-right-radius: 10px;
+    }
+
+    tr:last-of-type td:first-of-type {
+      border-bottom-left-radius: 10px;
+    }
+
+    tr:last-of-type td:last-of-type {
+      border-bottom-right-radius: 10px;
+    }
+
+    th.long {
+      width: 10%;
+    }
+
+    th.short {
+      width: 2%;
+    }
+
+    th.medium {
+      width: 4%;
+    }
+
+
+    .gradient-header {
+      background-image: linear-gradient(115deg,
+          hsl(168deg 100% 35%) 0%,
+          hsl(168deg 100% 29%) 39%,
+          hsl(168deg 100% 20%) 61%,
+          hsl(168deg 100% 7%) 100%);
       font-family: 'Roboto', sans-serif;
       font-weight: bold;
       color: white;
       text-align: center;
       padding: 20px;
-      font-size: 32px; /* Increased font size */
-      border-radius: 25px; /* Added rounded corners */
-      display: flex; /* Added flexbox layout to allow for logo and text to be side by side */
-      align-items: center; /* Centers items vertically */
-      justify-content: center; /* Centers items horizontally */
+      font-size: 32px;
+      /* Increased font size */
+      border-radius: 25px;
+      /* Added rounded corners */
+      display: flex;
+      /* Added flexbox layout to allow for logo and text to be side by side */
+      align-items: center;
+      /* Centers items vertically */
+      justify-content: center;
+      /* Centers items horizontally */
     }
 
-    .gradient-header img { /* Added styling for the logo image */
-      height: 50px; /* Sets the height of the image */
-      margin-right: 20px; /* Adds a margin between the image and the text */
+    .gradient-header img {
+      /* Added styling for the logo image */
+      height: 50px;
+      /* Sets the height of the image */
+      margin-right: 20px;
+      /* Adds a margin between the image and the text */
     }
 
-    .lorem-ipsum { /* Added class for Lorem Ipsum paragraph */
-      font-size: 18px; /* Sets the font size for the paragraph */
-      line-height: 1.5; /* Increases the line height for the paragraph */
+    .lorem-ipsum {
+      /* Added class for Lorem Ipsum paragraph */
+      font-size: 18px;
+      /* Sets the font size for the paragraph */
+      line-height: 1.5;
+      /* Increases the line height for the paragraph */
     }
-    .refresh-button { /* Added class for refresh button */
-      background-color: var(--primary-color); /* Sets the background color for the button */
-      border: none; /* Removes the border from the button */
-      color: white; /* Sets the text color for the button */
-      padding: 15px 32px; /* Adds padding to the button */
-      text-align: center; /* Centers the text in the button */
-      text-decoration: none; /* Removes the underline from the text */
-      font-size: 16px; /* Sets the font size for the button text */
-      cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
-      border-radius: 25px; /* Adds rounded corners to the button */
+
+    .refresh-button {
+      /* Added class for refresh button */
+      background-color: var(--primary-color);
+      /* Sets the background color for the button */
+      border: none;
+      /* Removes the border from the button */
+      color: white;
+      /* Sets the text color for the button */
+      padding: 15px 32px;
+      /* Adds padding to the button */
+      text-align: center;
+      /* Centers the text in the button */
+      text-decoration: none;
+      /* Removes the underline from the text */
+      font-size: 16px;
+      /* Sets the font size for the button text */
+      cursor: pointer;
+      /* Changes the cursor to a pointer when hovering over the button */
+      border-radius: 25px;
+      /* Adds rounded corners to the button */
       font-weight: bold;
       font-size: 16px;
     }
-    .search-input::placeholder {
-  padding: 10px;
-  font-size: 15px; /* Increase the font size to 18 pixels */
-  color: gray; /* Change the color to gray */
-}
 
-.search-input {
-  padding: 10px;
-  font-size: 15px; /* Increase the font size to 18 pixels */
-  color: gray; /* Change the color to gray */
-}
+    .search-input::placeholder {
+      padding: 10px;
+      font-size: 15px;
+      /* Increase the font size to 18 pixels */
+      color: gray;
+      /* Change the color to gray */
+    }
+
+    .search-input {
+      padding: 10px;
+      font-size: 15px;
+      /* Increase the font size to 18 pixels */
+      color: gray;
+      /* Change the color to gray */
+    }
 
     .search-input {
       margin-top: 10px;
-      height:30px;
+      height: 30px;
       display: inline-block;
-      font-size:15px;
-  background-color: white;
-  border: 1px solid var(--primary-color);
-}
+      font-size: 15px;
+      background-color: white;
+      border: 1px solid var(--primary-color);
+    }
 
-.search-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center; /* Align the elements to the center */
-}
+    .search-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      /* Align the elements to the center */
+    }
 
-/* Style the search icon when it is clicked */
-.search-icon:active {
-  background-color: lightblue;
-}
-
-
-  /* Style the search icon */
-  .search-icon {
-    width: 24px;
-    height: 24px;
-    background-image: url(1024px-Search_Icon.svg.png);
-    background-size: cover;
-    margin-right: 8px;
-    cursor: pointer; /* Add this line to change the cursor to a pointer when hovering over the search icon */
-  }
-
-.search-input:hover,
-.search-input:focus {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-a:link { text-decoration: none; }
+    /* Style the search icon when it is clicked */
+    .search-icon:active {
+      background-color: lightblue;
+    }
 
 
-a:visited { text-decoration: none; }
+    /* Style the search icon */
+    .search-icon {
+      width: 24px;
+      height: 24px;
+      background-image: url(1024px-Search_Icon.svg.png);
+      background-size: cover;
+      margin-right: 8px;
+      cursor: pointer;
+      /* Add this line to change the cursor to a pointer when hovering over the search icon */
+    }
+
+    .search-input:hover,
+    .search-input:focus {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    a:link {
+      text-decoration: none;
+    }
 
 
-a:hover { text-decoration: none; }
+    a:visited {
+      text-decoration: none;
+    }
 
 
-a:active { text-decoration: none; }
+    a:hover {
+      text-decoration: none;
+    }
 
-nav {
-  border-radius: 25px;
-  position: fixed;
-  display: block;
-  width: 100px;
-  height: 100vh;
-  background-color: var(--primary-color);
-  text-align: left;
-}
 
-nav .brand {
-  font-size: 3rem;
-  color: white;
-  font-weight: 600;
-  display: block;
-}
+    a:active {
+      text-decoration: none;
+    }
 
-nav .menu {
-  display: block;
-  margin-top: 5rem;
-}
 
-nav .menu a {
-  display: block;
-}
+    nav {
+      border-radius: 25px;
+      position: fixed;
+      display: block;
+      width: 110px;
+      height: 100vh;
+      background-color: var(--primary-color);
+      text-align: left;
+    }
 
-nav .menu a, nav .social a {
-  color: white;
-  -webkit-transition: color 200ms ease-in;
-  -moz-transition: color 200ms ease-in;
-  -ms-transition: color 200ms ease-in;
-  -o-transition: color 200ms ease-in;
-  transition: color 200ms ease-in;
-}
+    nav .brand {
+      font-size: 3rem;
+      color: white;
+      font-weight: 600;
+      display: block;
+    }
 
-nav .menu a:hover, nav .menu a.active {
-  font-weight: bold;
-  font-size:19px;
-}
+    nav .menu {
+      display: block;
+      margin-top: 5rem;
+    }
 
-div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
+    nav .menu a {
+      display: block;
+    }
 
+    nav .menu a,
+    nav .social a {
+      color: white;
+      -webkit-transition: color 200ms ease-in;
+      -moz-transition: color 200ms ease-in;
+      -ms-transition: color 200ms ease-in;
+      -o-transition: color 200ms ease-in;
+      transition: color 200ms ease-in;
+    }
+
+    nav .menu a:hover,
+    nav .menu a.active {
+      font-weight: bold;
+      font-size: 19px;
+    }
+
+    .done {
+      color: green;
+    }
+
+    .in-work {
+      color: orange
+    }
+
+    .not-started {
+      color: red;
+    }
+
+
+    div {
+      overflow-x: auto;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  
 
 
-    <title>SOS McDonalds Dashboard</title>
-    <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Fira+Sans:600" rel="stylesheet">
+
+  <title>SOS McDonalds Dashboard</title>
+  <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Fira+Sans:600" rel="stylesheet">
 
 
- 
+
 
 </head>
 
 <body>
   <nav>
     <span class="brand">
-      <img src="Logo SOS IS GmbH Neu shadow_tif.webp" style = "width: 100px; margin-top:10px; margin-left:-5px;"></img>
+      <img src="Logo SOS IS GmbH Neu shadow_tif.webp" style="width: 100px; margin-top:10px; margin-left:-5px;"></img>
     </span>
     <div class="menu">
-      <a href="#home" class="active scroll-page"><i class="material-icons">Home</i></a><br>
-      <a href="#inprogress" class="active scroll-page"><i class="material-icons">In Progress</i></a><br>
-      <hr></hr>
-      <a href="archive.html" class="scroll-page"><i class="material-icons">Archive</i></a><br>
+      <a href="#home" class="scroll-page">🡅 Top</a><br>
+      <a href="#inprogress" class="scroll-page">Details</a><br>
+      <hr>
+      </hr>
+      <a href="index.html" class="scroll-page">Home</a><br>
+      <a href="archive.html" class="scroll-page">Archive</a><br>
     </div>
   </nav>
 
-  
-<div class = "cont">  
-  
-  <section style = "margin-left: 100px" id="home"> 
- 
-    <div class="features-header text-center" style = "margin-top: 30px;">
-      <div class="container-sm">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png" alt="McDonald's logo" style = "display: block; margin: auto auto; width:100px; text-align: center;">
-           <h1 style = "color:black; text-align: center; margin-top:0px;">McDonalds Dashboard</h2>
 
+  <div class="cont">
+
+    <section style="margin-left: 100px" id="home">
+
+      <div class="features-header text-center" style="margin-top: 30px;">
+        <div class="container-sm">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
+            alt="McDonald's logo" style="display: block; margin: auto auto; width:100px; text-align: center;">
+          <h1 style="color:black; text-align: center; margin-top:0px;">McDonald's Rolloutmonitor</h2>
+
+        </div>
       </div>
+
+      <div class="lorem-ipsum">
+        <div>
+          <p>Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die
+            Adresse und den Status des Restaurants an.
+            Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die
+            Adresse und den Status des Restaurants an.
+            Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die
+            Adresse und den Status des Restaurants an.
+            Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die
+            Adresse und den Status des Restaurants an.
+            Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die
+            Adresse und den Status des Restaurants an.
+    </section id="home">
+    <section style="margin-left: 100px" id="inprogress">
+      <div>
+        <h1>
+          Detailansicht geplante Rolloutplanungen
+        </h1>
+      </div>
+      </p>
+      <div class="search-container">
+        <button class="refresh-button" onclick="window.location.reload();">Refresh</button>
+        <form>
+          <input type="text" id="search" class="search-input" placeholder="Search">
+        </form>
+      </div>
+
+
+      <div>
+        <table id="data-table" class="sortable">
+          <thead>
+            <tr>
+              <th class="long">Store</th>
+              <th>F/C</th>
+              <th class="short">Art</th>
+              <th class="medium">Variante</th>
+              <th class="long">Adresse</th>
+              <th class="short">DL</th>
+              <th class="short">KW</th>
+              <th class="short">Abbau</th>
+              <th>IT Tag 1</th>
+              <th>IT Tag 2</th>
+              <th>IT Tag 3</th>
+              <th>IT Tag 4</th>
+              <th>Eröffnung</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section id="inprogress">
+    <hr style="margin-left: 100px">
+    </hr>
+
   </div>
 
-  <div class="lorem-ipsum"><div>
-    <p>Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
-      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
-      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
-      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
-      Das ist ein Dashboard für McDonald's Restaurants in Deutschland. Es zeigt die Anzahl der Restaurants, die Adresse und den Status des Restaurants an.
-    </section id="home"> 
-<section style = "margin-left: 100px" id="inprogress"> 
-    <div>
-        <h1>
-        In Progress
-      </h1>
-    </div>
-    </p>
-     <div class="search-container">
-      <button class="refresh-button" onclick="window.location.reload();">Refresh</button>    
-        <form>
-        <input type="text" id="search" class="search-input" placeholder="Search">
-      </form>
-    </div>
+  <script>
 
-    
- <div>
-    <table id="data-table" class = "sortable">
-      <thead>
-        <tr>
-          <th class="long">Store</th>
-          <th>F/C</th>
-          <th class ="short">Art</th>
-          <th class = "medium">Variante</th>
-          <th class ="long">Adresse</th>
-          <th class ="short">DL</th>
-          <th class ="short">KW</th>
-          <th class = "short">Abbau</th>
-          <th>IT Tag 1</th>
-          <th>IT Tag 2</th>
-          <th>IT Tag 3</th>
-          <th>IT Tag 4</th>
-          <th>Eröffnung</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-    </div> 
-</section id="inprogress"> 
-<hr style = "margin-left: 100px"></hr>
-  
-</div> 
-<script>
-    
     // Replace YOUR_SHEET_ID with the ID of your Google Sheets file
     const SHEET_ID = '1Y5nmITD-nCh1Au4RwxMNxwgNMTke5PKaVLJKVmykilA';
     // Replace YOUR_API_KEY with your Google API key
@@ -360,15 +446,30 @@ div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
     $.ajax({
       url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/A1:M28?key=${API_KEY}`,
       type: 'GET',
-      success: function(response) {
+      success: function (response) {
         // The response from the API includes the data for the table in the "values" property
         const data = response.values;
         // Iterate through the data and add a row to the table for each item
-        data.forEach(function(item) {
+        data.forEach(function (item) {
+
+          try {// Determine the class name for the "status" cell based on its value
+            var statusClass = "";
+            if (item[1] === "OFFEN") {
+              statusClass = "done";
+            } else if (item[1] === "F/C") {
+              statusClass = "in-work";
+            } else {
+              statusClass = "not-started";
+            }
+          }
+          catch (e) {
+            console.log(e);
+          }
+
           $('#data-table tbody').append(`
             <tr>
               <td>${item[0]}</td>
-              <td>${item[1]}</td>
+              <td class="${statusClass}">${item[1]}</td>
               <td>${item[2]}</td>
               <td>${item[3]}</td>
               <td>${item[4]}</td>
@@ -387,59 +488,27 @@ div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
     });
   </script>
 
-<script>
-    
-  // Make a GET request to the Google Sheets API to retrieve the data for the table
-  $.ajax({
-    url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/A1:M28?key=${API_KEY}`,
-    type: 'GET',
-    success: function(response) {
-      // The response from the API includes the data for the table in the "values" property
-      const data = response.values;
-      // Iterate through the data and add a row to the table for each item
-      data.forEach(function(item) {
-        $('#data-table2 tbody').append(`
-          <tr>
-            <td>${item[0]}</td>
-            <td>${item[1]}</td>
-            <td>${item[2]}</td>
-            <td>${item[3]}</td>
-            <td>${item[4]}</td>
-            <td>${item[5]}</td>
-            <td>${item[6]}</td>
-            <td>${item[7]}</td>
-            <td>${item[8]}</td>
-            <td>${item[9]}</td>
-            <td>${item[10]}</td>
-            <td>${item[11]}</td>
-            <td>${item[12]}</td>
-          </tr>
-        `);
-      });
-    }
-  });
-</script>
   <script>
     // Get a reference to the search input
     const searchInput = document.getElementById('search');
-  
+
     // Add an event listener to the search input
-    searchInput.addEventListener('keyup', function() {
+    searchInput.addEventListener('keyup', function () {
       // Get the search term
       const searchTerm = this.value.toLowerCase();
-  
+
       // Get a reference to all the rows in the table
       const rows = document.querySelectorAll('table tbody tr');
-  
+
       // Iterate through the rows
-      rows.forEach(function(row) {
+      rows.forEach(function (row) {
         // Get the text content of all the cells in the row
         const cells = row.querySelectorAll('td');
         let cellText = '';
-        cells.forEach(function(cell) {
+        cells.forEach(function (cell) {
           cellText += cell.textContent.toLowerCase() + ' ';
         });
-  
+
         // If the search term is not found in the cell text, hide the row
         if (cellText.indexOf(searchTerm) === -1) {
           row.style.display = 'none';
@@ -451,41 +520,68 @@ div {overflow-x:auto;margin-left: 15px; margin-right: 15px;}
     });
   </script>
 
-<script>
-$(function() {
-  $('.scroll-page').on('click', function() {
-    var offset = 0;
-    var speed = 800;
-    var target = $(this.hash);
+  <script>
+    $(function () {
+      $('.scroll-page').on('click', function () {
+        var offset = 0;
+        var speed = 800;
+        var target = $(this.hash);
 
-    $('nav .menu a').each(function() {
-      $(this).removeClass('active');
+        $('nav .menu a').each(function () {
+          $(this).removeClass('active');
+        });
+
+        $(this).addClass('active');
+
+        $('html, body').animate({
+          scrollTop: target.offset().top - offset
+        }, speed, 'swing');
+      });
+
     });
 
-    $(this).addClass('active');
+    $(window).scroll(function (event) {
+      var scrollPos = $(document).scrollTop();
+      console.log(scrollPos);
+      $('nav .menu a').each(function () {
+        var curLink = $(this);
+        var refElement = $(curLink.attr('href'));
 
-    $('html, body').animate({
-      scrollTop: target.offset().top - offset
-    }, speed, 'swing'); });
+        if (refElement.position().top <= scrollPos + 60) {
+          $('nav .menu a').removeClass('active');
+          curLink.addClass('active');
 
-});
+        } else {
+          curLink.removeClass('active');
+        }
+      });
+    });
+  </script>
 
-$(window).scroll(function(event) {
-  var scrollPos = $(document).scrollTop();
-  console.log(scrollPos);
-  $('nav .menu a').each(function() {
-    var curLink = $(this);
-    var refElement = $(curLink.attr('href'));
+  <script>
+    var table = document.getElementById("data-table");
+    var cells = table.getElementsByTagName("td");
 
-    if (refElement.position().top <= scrollPos + 60) {
-      $('nav .menu a').removeClass('active');
-      curLink.addClass('active');
+    // Loop through all the cells in the "status" column
+    for (var i = 0; i < cells.length; i++) {
+      // Get the value of the current cell
+      var cellValue = cells[i].innerHTML;
 
-    } else {
-      curLink.removeClass('active');
+      // Remove any existing classes from the cell
+      cells[i].classList.remove("done", "in-work", "not-started");
+
+      // Add a class to the cell based on its value
+      if (cellValue === "OFFEN") {
+        cells[i].classList.add("done");
+      } else if (cellValue === "F/C") {
+        cells[i].classList.add("in-work");
+      } else {
+        cells[i].classList.add("not-started");
+      }
     }
-  });
-});</script>
+  </script>
+
 
 </body>
+
 </html>
