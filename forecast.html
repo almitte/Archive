@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Website</title>
+  <style>
+    :root {
+      --font-big-size: 30px;
+      --font-medium-size: 20px;
+      --font-small-size: 15px;
+      --main-dark: #009879;
+      --main-medium: #315C2B;
+      --main-light: #79a370;
+      --accent-bright: #ffc10b;
+      --accent-medium: #ffd23f;
+      --accent-light: #ffe57a;
+    }
+
+    * {
+      /* Targets all elements */
+      /* Adds a padding of 10 pixels to all elements */
+      font-family: Roboto, sans-serif;
+      animation: fadein 0.5s;
+      /* Add a fade-in animation when the page loads */
+    }
+
+    body {
+      background-color: #f7f7f7;
+    }
+
+    /* Add a hover effect to the rows of the table */
+    table tbody tr:hover {
+      background-color: #00987a4b;
+    }
+
+    /* Add the fade-in animation */
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    h3 {
+      color: var(--main-light);
+    }
+
+    h1 {
+      font-size: var(--font-big-size);
+      text-align: left;
+      color: var(--main-dark);
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: var (--font-medium-size);
+      text-align: left;
+      color: var(--main-medium);
+      margin-bottom: 0;
+    }
+
+
+    table {
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9rem;
+      min-width: 400px;
+      width: 100%;
+      table-layout: fixed;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    td,
+    th {
+      padding: 12px 15px;
+      text-align: center;
+
+    }
+
+    td {
+      font-size: var(--font-small-medium);
+      align-items: center;
+    }
+
+    th {
+      font-size: var(--font-small-size);
+    }
+
+    thead tr {
+      background-color: var(--main-dark);
+      color: #ffffff;
+      text-align: left;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+
+    tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+
+    tbody tr:nth-of-type(odd) {
+      background-color: white;
+    }
+
+    tbody tr:last-of-type {
+      border-bottom: 2px solid var(--main-dark);
+    }
+
+    th {
+      border-top: none;
+    }
+
+    td:first-child,
+    th:first-child {
+      border-left: none;
+    }
+
+    th:first-of-type {
+      border-top-left-radius: 10px;
+    }
+
+    th:last-of-type {
+      border-top-right-radius: 10px;
+    }
+
+    tr:last-of-type td:first-of-type {
+      border-bottom-left-radius: 10px;
+    }
+
+    tr:last-of-type td:last-of-type {
+      border-bottom-right-radius: 10px;
+    }
+
+    th.long {
+      width: 10%;
+    }
+
+    th.short {
+      width: 2%;
+    }
+
+    th.medium {
+      width: 4%;
+    }
+
+    .lorem-ipsum {
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      /* Added class for Lorem Ipsum paragraph */
+      font-size: var(--font-small-size);
+      /* Sets the font size for the paragraph */
+      line-height: 1.5;
+      /* Increases the line height for the paragraph */
+      display: inline-block;
+      font-family: sans-serif;
+      color: #000;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 16px 16px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .lorem-ipsum__icon {
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: var(--main-dark);
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+    }
+
+    .lorem-ipsum__text {
+      font-family: sans-serif;
+      font-size: var(--font-small-size);
+      color: #000
+    }
+
+    .refresh-button {
+      background-color: var(--accent-bright);
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      font-size: var(--font-small-size);
+      cursor: pointer;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: box-shadow 0.2s;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .refresh-button:hover {
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+
+    }
+
+
+    /* Search box container styles */
+    .search-box-container {
+      vertical-align: middle;
+      position: relative;
+      margin-right: 0;
+
+    }
+
+    /* Search box styles */
+    .search-box {
+      width: 100px;
+      /* Set the width of the search box */
+      height: 40px;
+      /* Set the height of the search box */
+      border-radius: 20px;
+      /* Add round corners to the search box using the border-radius property */
+      border: 2px solid var(--main-dark);
+      /* Add a border to the search box */
+      outline: none;
+      /* Remove the default outline of the search box */
+      font-size: 16px;
+      /* Set the font size of the search box */
+      color: var(--main-dark);
+      /* Set the font color of the search box */
+      padding: 0px 50px;
+      /* Add some padding to the search box */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      /* Add a drop shadow to the search box using the box-shadow property */
+      transition: border 0.2s ease-in-out;
+      /* Add a transition to the border to animate the change */
+      transition: width 0.4s ease-in-out;
+    }
+
+
+    /* Search box focus styles */
+    .search-box:focus {
+      border: 2px solid var(--main-dark);
+      width: 200px;
+      /* Change the border color of the search box on focus */
+    }
+
+    .search-icon {
+      position: absolute;
+      /* Set the position property of the search icon to absolute */
+      top: 50%;
+      /* Position the search icon vertically in the middle of the search box container */
+      left: 20px;
+      /* Position the search icon horizontally at the left of the search box container */
+      transform: translateY(-50%);
+      /* Translate the search icon vertically by half its own height to position it in the middle of the search box container */
+      font-size: 20px;
+      /* Set the font size of the search icon */
+      color: var(--main-dark);
+      /* Set the font color of the search icon */
+    }
+
+    .refresh-search-container {
+      display: flex;
+      /* Set the display property of the container to flex to align the child elements horizontally */
+      justify-content: space-between;
+      /* Align the child elements to the left and right of the container using the justify-content property */
+    }
+
+
+    nav {
+      margin-left: 20px;
+      margin-right: 20px;
+      /* Navbar styles */
+      position: sticky;
+      /* Make the navbar sticky using the position: sticky property */
+      top: 0;
+      /* Set the top position of the navbar to 0 to make it stick to the top of the page */
+      background-color: var(--main-dark);
+      /* Set the background color of the navbar */
+      color: white;
+      /* Set the font color of the navbar */
+      display: flex;
+      /* Set the display property of the navbar to flex */
+      align-items: center;
+      /* Align the content inside the navbar to the center */
+      border-radius: 10px;
+      /* Add round corners to the navbar using the border-radius property */
+    }
+
+    nav .left {
+      /* Left section styles */
+      float: left;
+      /* Float the left div to the left */
+      display: flex;
+      /* Set the display property of the left div to flex */
+      align-items: center;
+      /* Align the content inside the left div to the center */
+    }
+
+    nav .middle {
+      /* Middle section styles */
+      flex: 1;
+      /* Set the flex property of the middle div to 1 to make it take up all available space */
+      display: flex;
+      /* Set the display property of the middle div to flex */
+      align-items: center;
+      /* Align the content inside the middle div to the center */
+      border-left: 1px solid white;
+      /* Add a border-left to the middle div to create a vertical line */
+      border-right: 1px solid white;
+      /* Add a border-right to the middle div to create a vertical line */
+    }
+
+    nav .right {
+      /* Right section styles */
+      float: right;
+      /* Float the right div to the right */
+      display: flex;
+      /* Set the display property of the right div to flex */
+      align-items: center;
+      /* Align the content inside the right div to the center */
+    }
+
+    nav img {
+      padding: 10px;
+      /* Image styles */
+      width: 50px;
+      /* Set the width of the image */
+    }
+
+    nav h2 {
+      /* Heading styles */
+      margin: 0;
+      color: white;
+      /* Remove the default margin of the heading element */
+    }
+
+    nav a {
+      /* Link styles */
+      display: block;
+      /* Set the display property of the links to block to make them span the full width of the navbar */
+      padding: 0 10px;
+      /* Add some padding to the links */
+      text-decoration: none;
+      /* Remove the default text-decoration of the links */
+      color: white;
+      /* Set the font color of the links to white */
+      transition: all 0.4s ease-in-out;
+    }
+
+    nav a:hover,
+    nav a.active {
+      /* Link hover styles */
+      color: #000;
+      /* Set the font color of the links to black on hover */
+      background-color: var(--accent-bright);
+      /* Set the background color for the links to grey on hover */
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+      /* Add a box shadow to the links on hover */
+      border-radius: 25px;
+      /* Add rounded corners to the links on hover */
+    }
+
+
+    .done {
+      color: green;
+    }
+
+    .in-work {
+      color: orange
+    }
+
+    .not-started {
+      color: red;
+    }
+
+    div {
+      overflow-x: auto;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  </style>
+
+
+  <head>
+    <title>Forecoast</title>
+    <link rel="icon" href="Logo SOS IS GmbH Neu shadow_tif.webp">
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+
+  <nav>
+    <div class="left">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
+        alt="McDonald's logo">
+      <h2>McDonald's Rolloutmonitor</h2>
+    </div>
+    <div class="middle">
+      <p style="margin-left: 15px; font-weight: bold;"> Projektstatus: </p>
+      <a class="scroll-page" href="#abgeschlossen">Abgeschlossen</a>
+      <a class="scroll-page" href="#inbau">In Bau befindlich</a>
+      <a class="scroll-page" href="#vertrag">Vertrag</a>
+      <a class="scroll-page" href="#freigabe2">Freigabe 2</a>
+    </div>
+    <div class="right">
+      <a href="index.html">Home</a>
+      <a href="inprogress.html">Detailplanung</a>
+      <a href="archive.html">Archiv</a>
+    </div>
+  </nav>
+
+</head>
+
+<body>
+
+  <section id="home">
+
+    <div>
+      <h1>
+        Forecast für alle geplanten Rolloutprojekte
+      </h1>
+    </div>
+    <div class="lorem-ipsum">
+      <div class="lorem-ipsum__icon">i</div>
+      <div class="lorem-ipsum__text">
+        Diese Seite bietet Ihnen einen Überblick über alle geplanten Rolloutprojekte. Diese sind
+        nach ihrem
+        spezifischen Projektstatus sortiert aufgelistet. Die Daten werden täglich aktualisiert.
+      </div>
+    </div>
+  </section id="home">
+  <section id="abgeschlossen">
+    <div>
+      <h2>
+        Abgeschlossen / Umgesetzt
+      </h2>
+    </div>
+    </p>
+    <!-- Refresh and search container -->
+    <div class="refresh-search-container">
+      <!-- Refresh button -->
+      <button class="refresh-button" onclick="window.location.reload();">Refresh</button>
+      <!-- Search box container -->
+      <div class="search-box-container">
+        <!-- Search box -->
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" class="search-box" placeholder="Search...">
+        <!-- Search icon -->
+
+      </div>
+    </div>
+    <div>
+      <table id="data-table" class="sortable">
+        <thead>
+          <tr>
+            <th class="long">Store</th>
+            <th>F/C</th>
+            <th class="short">Art</th>
+            <th class="medium">Variante</th>
+            <th class="long">Adresse</th>
+            <th class="short">DL</th>
+            <th class="short">KW</th>
+            <th class="short">Abbau</th>
+            <th>IT Tag 1</th>
+            <th>IT Tag 2</th>
+            <th>IT Tag 3</th>
+            <th>IT Tag 4</th>
+            <th>Eröffnung</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+    </div>
+  </section id="abgeschlossen">
+
+  <section id="inbau">
+    <div>
+      <h2>
+        In Bau befindlich
+      </h2>
+
+    </div>
+    </p>
+    <div class=" search-container">
+      <button class="refresh-button" onclick="window.location.reload();">Refresh</button>
+      <form>
+        <input type="text" id="search" class="search-input" placeholder="Search">
+      </form>
+    </div>
+
+
+    <div>
+      <table id="data-table" class="sortable">
+        <thead>
+          <tr>
+            <th class="long">Store</th>
+            <th>F/C</th>
+            <th class="short">Art</th>
+            <th class="medium">Variante</th>
+            <th class="long">Adresse</th>
+            <th class="short">DL</th>
+            <th class="short">KW</th>
+            <th class="short">Abbau</th>
+            <th>IT Tag 1</th>
+            <th>IT Tag 2</th>
+            <th>IT Tag 3</th>
+            <th>IT Tag 4</th>
+            <th>Eröffnung</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="vertrag">
+    <div>
+      <h2>
+        Vertrag
+      </h2>
+    </div>
+    </p>
+    <div class=" search-container">
+      <button class="refresh-button" onclick="window.location.reload();">Refresh</button>
+      <form>
+        <input type="text" id="search" class="search-input" placeholder="Search">
+      </form>
+    </div>
+
+
+    <div>
+      <table id="data-table" class="sortable">
+        <thead>
+          <tr>
+            <th class="long">Store</th>
+            <th>F/C</th>
+            <th class="short">Art</th>
+            <th class="medium">Variante</th>
+            <th class="long">Adresse</th>
+            <th class="short">DL</th>
+            <th class="short">KW</th>
+            <th class="short">Abbau</th>
+            <th>IT Tag 1</th>
+            <th>IT Tag 2</th>
+            <th>IT Tag 3</th>
+            <th>IT Tag 4</th>
+            <th>Eröffnung</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </section id="inprogress">
+
+  <section id="freigabe2">
+    <div>
+      <h2>
+        Freigabe 2
+      </h2>
+    </div>
+    </p>
+    <div class=" search-container">
+      <button class="refresh-button" onclick="window.location.reload();">Refresh</button>
+      <form>
+        <input type="text" id="search" class="search-input" placeholder="Search">
+      </form>
+    </div>
+
+
+    <div>
+      <table id="data-table" class="sortable">
+        <thead>
+          <tr>
+            <th class="long">Store</th>
+            <th>F/C</th>
+            <th class="short">Art</th>
+            <th class="medium">Variante</th>
+            <th class="long">Adresse</th>
+            <th class="short">DL</th>
+            <th class="short">KW</th>
+            <th class="short">Abbau</th>
+            <th>IT Tag 1</th>
+            <th>IT Tag 2</th>
+            <th>IT Tag 3</th>
+            <th>IT Tag 4</th>
+            <th>Eröffnung</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </section id="inprogress">
+
+
+  <script>
+
+    // Replace YOUR_SHEET_ID with the ID of your Google Sheets file
+    const SHEET_ID = '1Y5nmITD-nCh1Au4RwxMNxwgNMTke5PKaVLJKVmykilA';
+    // Replace YOUR_API_KEY with your Google API key
+    const API_KEY = 'AIzaSyAgtyYzCyesKwKsBr1Qzee0jJoFMuwONtE';
+
+    // Make a GET request to the Google Sheets API to retrieve the data for the table
+    $.ajax({
+      url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/A1:M28?key=${API_KEY}`,
+      type: 'GET',
+      success: function (response) {
+        // The response from the API includes the data for the table in the "values" property
+        const data = response.values;
+        // Iterate through the data and add a row to the table for each item
+        data.forEach(function (item) {
+
+          try {// Determine the class name for the "status" cell based on its value
+            var statusClass = "";
+            if (item[1] === "OFFEN") {
+              statusClass = "done";
+            } else if (item[1] === "F/C") {
+              statusClass = "in-work";
+            } else {
+              statusClass = "not-started";
+            }
+          }
+          catch (e) {
+            console.log(e);
+          }
+
+          $('#data-table tbody').append(`
+            <tr>
+              <td>${item[0]}</td>
+              <td class="${statusClass}">${item[1]}</td>
+              <td>${item[2]}</td>
+              <td>${item[3]}</td>
+              <td>${item[4]}</td>
+              <td>${item[5]}</td>
+              <td>${item[6]}</td>
+              <td>${item[7]}</td>
+              <td>${item[8]}</td>
+              <td>${item[9]}</td>
+              <td>${item[10]}</td>
+              <td>${item[11]}</td>
+              <td>${item[12]}</td>
+            </tr>
+          `);
+        });
+      }
+    });
+  </script>
+
+  <script>
+    // Get the search box and data table elements
+    var searchBox = document.querySelector('.search-box');
+    var dataTable = document.querySelector('#data-table');
+
+    // Add an event listener to the search box that listens for input events
+    searchBox.addEventListener('input', function () {
+      // Get the search query from the search box
+      var query = this.value.toLowerCase();
+
+      // Loop through all the rows in the data table
+      for (var i = 1; i < dataTable.rows.length; i++) {
+        // Get the current row
+        var row = dataTable.rows[i];
+
+        // Set the row's display style to none by default
+        row.style.display = 'none';
+
+        // Loop through all the cells in the row
+        for (var j = 0; j < row.cells.length; j++) {
+          // Get the current cell
+          var cell = row.cells[j];
+
+          // If the cell's text content contains the search query, set the row's display style to '' (empty string) to show the row
+          if (cell.textContent.toLowerCase().indexOf(query) > -1) {
+            row.style.display = '';
+            break;
+          }
+        }
+      }
+    });
+
+  </script>
+  <script>
+    $(function () {
+      $('.scroll-page').on('click', function () {
+        var offset = 60; // Set the offset to 50px
+        var speed = 800;
+        var target = $(this.hash);
+
+        $('nav a').each(function () {
+          $(this).removeClass('active');
+        });
+
+        $(this).addClass('active');
+
+        $('html, body').animate({
+          scrollTop: target.offset().top - offset // Subtract the offset from the scrollTop position
+        }, speed, 'swing');
+      });
+    });
+  </script>
+
+  <script>
+    var table = document.getElementById("data-table");
+    var cells = table.getElementsByTagName("td");
+
+    // Loop through all the cells in the "status" column
+    for (var i = 0; i < cells.length; i++) {
+      // Get the value of the current cell
+      var cellValue = cells[i].innerHTML;
+
+      // Remove any existing classes from the cell
+      cells[i].classList.remove("done", "in-work", "not-started");
+
+      // Add a class to the cell based on its value
+      if (cellValue === "OFFEN") {
+        cells[i].classList.add("done");
+      } else if (cellValue === "F/C") {
+        cells[i].classList.add("in-work");
+      } else {
+        cells[i].classList.add("not-started");
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>
