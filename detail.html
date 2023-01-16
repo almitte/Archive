@@ -27,10 +27,6 @@
       /* Add a fade-in animation when the page loads */
     }
 
-    body {
-      background-color: #f7f7f7;
-    }
-
     /* Add the fade-in animation */
     @keyframes fadein {
       from {
@@ -70,16 +66,9 @@
         alt="McDonald's logo">
       <h2>McDonald's Rolloutmonitor</h2>
     </div>
-    <div class="middle">
-      <p style="margin-left: 15px; font-weight: bold;"> Projektstatus: </p>
-      <a class="scroll-page" href="#abgeschlossen">Abgeschlossen</a>
-      <a class="scroll-page" href="#inbau">In Bau befindlich</a>
-      <a class="scroll-page" href="#vertrag">Vertrag</a>
-      <a class="scroll-page" href="#freigabe2">Freigabe 2</a>
-    </div>
     <div class="right">
       <a href="index.html">Home</a>
-      <a href="detail.html">Detailplanung</a>
+      <a href="forecast.html">Forecast</a>
       <a href="archiv.html">Archiv</a>
     </div>
   </nav>
@@ -92,28 +81,20 @@
 
     <div>
       <h1>
-        Forecast für alle geplanten Rolloutprojekte
+        Detaillplanung für alle laufenden Rolloutprojekte
       </h1>
     </div>
     <div class="info-box">
       <div class="info-box__icon">i</div>
       <div class="info-box__text">
-        Diese Seite bietet Ihnen einen Überblick über alle geplanten Rolloutprojekte. Diese sind
-        nach ihrem
-        spezifischen Projektstatus sortiert aufgelistet. <br>
+        Diese Seite bietet Ihnen einen Überblick über alle laufenden Rolloutprojekte. <br>
         Die Daten werden fortlaufend aktualisiert. Um immer die aktuellsten Daten zu erhalten, drücken
         Sie bitte auf den Refresh Button.
-
       </div>
     </div>
   </section id="home">
-  <section id="abgeschlossen">
-    <div>
-      <h2>
-        Abgeschlossen / Umgesetzt
-      </h2>
-    </div>
-    </p>
+  <section id="detail">
+
     <!-- Refresh and search container -->
     <div class="refresh-search-container">
       <!-- Refresh button -->
@@ -131,18 +112,17 @@
       <table id="abgeschlossen-table" class="sortable">
         <thead>
           <tr>
-            <th class="long">Store</th>
-            <th>PLZ</th>
-            <th class="short">Ort</th>
-            <th class="medium">Straße</th>
-            <th class="long">Art</th>
-            <th class="short">F/C</th>
-            <th class="short">Variante</th>
-            <th class="short">DL</th>
-            <th>Schließung</th>
-            <th>KW</th>
-            <th>Eröffnung</th>
-            <th>KW</th>
+            <th class="long"></th>
+            <th>#01</th>
+            <th>#02</th>
+            <th>#03</th>
+            <th>#04</th>
+            <th>#05</th>
+            <th>#06</th>
+            <th>#07</th>
+            <th>#08</th>
+            <th>#09</th>
+            <th>#10</th>
           </tr>
         </thead>
         <tbody>
@@ -150,142 +130,7 @@
       </table>
 
     </div>
-  </section>
-
-  <section id="inbau">
-    <div>
-      <h2>
-        In Bau befindlich
-      </h2>
-
-    </div>
-    </p>
-    <div class="refresh-search-container">
-      <!-- Refresh button -->
-      <button class="refresh-button" onclick="window.location.reload();"><i class="fa fa-refresh"
-          style="margin-right: 10px;"></i>Aktualisieren</button>
-      <!-- Search box container -->
-      <div class="search-box-container">
-        <!-- Search box -->
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" class="search-box" placeholder="Suche...">
-        <!-- Search icon -->
-      </div>
-    </div>
-
-
-    <div>
-      <table id="inbau-table" class="sortable">
-        <thead>
-          <tr>
-            <th class="long">Store</th>
-            <th>PLZ</th>
-            <th class="short">Ort</th>
-            <th class="medium">Straße</th>
-            <th class="long">Art</th>
-            <th class="short">F/C</th>
-            <th class="short">Variante</th>
-            <th class="short">DL</th>
-            <th>Schließung</th>
-            <th>KW</th>
-            <th>Eröffnung</th>
-            <th>KW</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section id="vertrag">
-    <div>
-      <h2>
-        Vertrag
-      </h2>
-    </div>
-    </p>
-    <div class="refresh-search-container">
-      <!-- Refresh button -->
-      <button class="refresh-button" onclick="window.location.reload();"><i class="fa fa-refresh"
-          style="margin-right: 10px;"></i>Aktualisieren</button>
-      <!-- Search box container -->
-      <div class="search-box-container">
-        <!-- Search box -->
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" class="search-box" placeholder="Suche...">
-        <!-- Search icon -->
-      </div>
-    </div>
-
-
-    <div>
-      <table id="vertrag-table" class="sortable">
-        <thead>
-          <tr>
-            <th class="long">Store</th>
-            <th>PLZ</th>
-            <th class="short">Ort</th>
-            <th class="medium">Straße</th>
-            <th class="long">Art</th>
-            <th class="short">F/C</th>
-            <th class="short">Variante</th>
-            <th class="short">DL</th>
-            <th>Schließung</th>
-            <th>KW</th>
-            <th>Eröffnung</th>
-            <th>KW</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section id="freigabe2">
-    <div>
-      <h2>
-        Freigabe 2
-      </h2>
-    </div>
-    </p>
-    <div class="refresh-search-container">
-      <!-- Refresh button -->
-      <button class="refresh-button" onclick="window.location.reload();"><i class="fa fa-refresh"
-          style="margin-right: 10px;"></i>Aktualisieren</button>
-      <!-- Search box container -->
-      <div class="search-box-container">
-        <!-- Search box -->
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" class="search-box" placeholder="Suche...">
-        <!-- Search icon -->
-      </div>
-    </div>
-    <div>
-      <table id="freigabe2-table" class="sortable">
-        <thead>
-          <tr>
-            <th class="long">Store</th>
-            <th>PLZ</th>
-            <th class="short">Ort</th>
-            <th class="medium">Straße</th>
-            <th class="long">Art</th>
-            <th class="short">F/C</th>
-            <th class="short">Variante</th>
-            <th class="short">DL</th>
-            <th>Schließung</th>
-            <th>KW</th>
-            <th>Eröffnung</th>
-            <th>KW</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
+  </section id="detail">
 
   <script>
 
