@@ -57,6 +57,7 @@
     <link rel="stylesheet" href="info_box.css">
     <link rel="stylesheet" href="background.css">
     <link rel="stylesheet" href="div.css">
+    <link rel="stylesheet" href="popup.css">
   </head>
 
   <nav>
@@ -75,7 +76,17 @@
 
 </head>
 
-<body>
+<body onload="openForm();">
+  <div class="form-popup" id="myForm">
+    <form class="form-container">
+      <h1>Login</h1>
+
+      <label class="error-mark" for="psw" style="display:none; color: red; font-size: 15px;"><b>Ungültiges
+          Passwort</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
 
   <section id="home">
 
@@ -98,15 +109,9 @@
     <!-- Refresh and search container -->
     <div class="refresh-search-container">
       <!-- Refresh button -->
-      <button class="refresh-button" onclick="window.location.reload();"><i class="fa fa-refresh"
+      <button class="refresh-button" onclick="loadDetail1();"><i class="fa fa-refresh"
           style="margin-right: 10px;"></i>Aktualisieren</button>
-      <!-- Search box container -->
-      <div class="search-box-container">
-        <!-- Search box -->
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" class="search-box" placeholder="Suche...">
-        <!-- Search icon -->
-      </div>
+
     </div>
     <div>
       <table id="detail1-table" class="sortable">
@@ -132,15 +137,10 @@
     <!-- Refresh and search container -->
     <div class="refresh-search-container">
       <!-- Refresh button -->
-      <button class="refresh-button" onclick="window.location.reload();"><i class="fa fa-refresh"
+      <button class="refresh-button" onclick="loadDetail2();"><i class="fa fa-refresh"
           style="margin-right: 10px;"></i>Aktualisieren</button>
       <!-- Search box container -->
-      <div class="search-box-container">
-        <!-- Search box -->
-        <i class="fas fa-search search-icon"></i>
-        <input type="text" class="search-box" placeholder="Suche...">
-        <!-- Search icon -->
-      </div>
+
     </div>
     <div>
       <table id="detail2-table" class="sortable">
@@ -163,31 +163,34 @@
   </section id="detail2">
 
   <script>
+    function loadDetail2() {
+      if (checkPassword()) {
 
-    // Replace YOUR_SHEET_ID with the ID of your Google Sheets file
-    const SHEET_ID = '1Y5nmITD-nCh1Au4RwxMNxwgNMTke5PKaVLJKVmykilA';
-    // Replace YOUR_API_KEY with your Google API key
-    const API_KEY = 'AIzaSyAgtyYzCyesKwKsBr1Qzee0jJoFMuwONtE';
+        // Replace YOUR_SHEET_ID with the ID of your Google Sheets file
+        const SHEET_ID = '1Y5nmITD-nCh1Au4RwxMNxwgNMTke5PKaVLJKVmykilA';
+        // Replace YOUR_API_KEY with your Google API key
+        const API_KEY = 'AIzaSyAgtyYzCyesKwKsBr1Qzee0jJoFMuwONtE';
 
-    // Make a GET request to the Google Sheets API to retrieve the data for the table
-    $.ajax({
-      url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values:batchGet?ranges=Detailplanung!A1:A28&ranges=Detailplanung!H1:K28&key=${API_KEY}`,
-      type: 'GET',
-      success: function (response) {
-        const data1 = response.valueRanges[0].values;
-        const data2 = response.valueRanges[1].values;
-        for (let i = 1; i < data1.length; i++) {
-          let hasValue = false;
-          if (data2[i]) {
-            for (let j = 0; j < data2[i].length; j++) {
-              if (data2[i][j]) {
-                hasValue = true;
-                break;
+        // Make a GET request to the Google Sheets API to retrieve the data for the table
+        $.ajax({
+          url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values:batchGet?ranges=Detailplanung!A1:A28&ranges=Detailplanung!H1:K28&key=${API_KEY}`,
+          type: 'GET',
+          success: function (response) {
+            $('#detail2-table tbody').empty();
+            const data1 = response.valueRanges[0].values;
+            const data2 = response.valueRanges[1].values;
+            for (let i = 1; i < data1.length; i++) {
+              let hasValue = false;
+              if (data2[i]) {
+                for (let j = 0; j < data2[i].length; j++) {
+                  if (data2[i][j]) {
+                    hasValue = true;
+                    break;
+                  }
+                }
               }
-            }
-          }
-          for (let j = 0; j < data1[i].length; j++) {
-            $('#detail2-table tbody').append(`
+              for (let j = 0; j < data1[i].length; j++) {
+                $('#detail2-table tbody').append(`
         <tr>
           <td class ="first-column">${data1[i][j]}</td>
           <td>${hasValue && data2[i] && data2[i][j] ? data2[i][j] : ''}</td>
@@ -198,28 +201,33 @@
           <td>${hasValue && data2[i] && data2[i][j + 5] ? data2[i][j + 5] : ''}</td>
         </tr>
     `);
+              }
+            }
           }
-        }
+        });
       }
-    });
+    }
   </script>
   <script>
-    // Replace YOUR_SHEET_ID with the ID of your Google Sheets file
-    const SHEET_ID_2 = '1Y5nmITD-nCh1Au4RwxMNxwgNMTke5PKaVLJKVmykilA';
-    // Replace YOUR_API_KEY with your Google API key
-    const API_KEY_2 = 'AIzaSyAgtyYzCyesKwKsBr1Qzee0jJoFMuwONtE';
-    // Make a GET request to the Google Sheets API to retrieve the data for the table
-    $.ajax({
-      url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID_2}/values/Detailplanung!A1:G28?key=${API_KEY_2}`,
-      type: 'GET',
-      success: function (response) {
-        // The response from the API includes the data for the table in the "values" property
-        const data = response.values;
-        data.shift();
-        // Iterate through the data and add a row to the table for each item
-        data.forEach(function (item) {
+    function loadDetail1() {
+      if (checkPassword()) {
+        // Replace YOUR_SHEET_ID with the ID of your Google Sheets file
+        const SHEET_ID_2 = '1Y5nmITD-nCh1Au4RwxMNxwgNMTke5PKaVLJKVmykilA';
+        // Replace YOUR_API_KEY with your Google API key
+        const API_KEY_2 = 'AIzaSyAgtyYzCyesKwKsBr1Qzee0jJoFMuwONtE';
+        // Make a GET request to the Google Sheets API to retrieve the data for the table
+        $.ajax({
+          url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID_2}/values/Detailplanung!A1:G28?key=${API_KEY_2}`,
+          type: 'GET',
+          success: function (response) {
+            $('#detail1-table tbody').empty();
+            // The response from the API includes the data for the table in the "values" property
+            const data = response.values;
+            data.shift();
+            // Iterate through the data and add a row to the table for each item
+            data.forEach(function (item) {
 
-          $('#detail1-table tbody').append(`
+              $('#detail1-table tbody').append(`
               <tr>
                 <td class ="first-column">${item[0] || "\u200B"}</td>
                 <td>${item[1] || "\u200B"}</td>
@@ -230,9 +238,11 @@
                 <td>${item[6] || "\u200B"}</td>
               </tr>
             `);
+            });
+          }
         });
       }
-    });
+    }
   </script>
 
   <script>
@@ -286,6 +296,48 @@
         }, speed, 'swing');
       });
     });
+  </script>
+  <script>
+    const form = document.querySelector(".form-container");
+    function openForm() {
+      if (checkPassword()) {
+        loadDetail1();
+        loadDetail2();
+        form.remove();
+      } else {
+        document.getElementById("myForm").style.display = "block";
+        const passwordInput = document.querySelector("input[name='psw']");
+        const errorMark = document.querySelector(".error-mark");
+        const submitButton = document.querySelector("button[type='submit']");
+
+        submitButton.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          if (passwordInput.value === "mcd") {
+            sessionStorage.setItem("passwordIsCorrect", true);
+            form.remove();
+            loadDetail1();
+            loadDetail2();
+          } else {
+            errorMark.style.display = "inline";
+          }
+        });
+      }
+    }
+
+
+  </script>
+
+  <script>
+    function checkPassword() {
+      const passwordIsCorrect = sessionStorage.getItem("passwordIsCorrect");
+      if (passwordIsCorrect === "true") {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
   </script>
 
 
