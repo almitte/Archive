@@ -9,10 +9,14 @@ table {
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-td,
+td {
+	padding: 12px 15px;
+	text-align: left;
+}
+
 th {
 	padding: 12px 15px;
-	text-align: center;
+	text-align: left;
 }
 
 td {

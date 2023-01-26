@@ -20,7 +20,7 @@
     }
 
     * {
-      font-family: "Ubuntu", sans-serif;
+      font-family: "Roboto", sans-serif;
       animation: fadein 0.5s;
     }
 
@@ -120,19 +120,18 @@
       <table id="2024-table" class="sortable">
         <thead>
           <tr>
-            <th class="long">Store</th>
-            <th>PLZ</th>
-            <th class="short">Ort</th>
-            <th class="medium">Straße</th>
-            <th class="long">Art</th>
-            <th class="short">F/C</th>
+            <th class="medium">Jahr</th>
+            <th class="medium">Store</th>
+            <th class="long">Adresse</th>
+            <th class="medium">Art</th>
             <th class="short">Variante</th>
+            <th class="medium">F/C</th>
             <th class="short">DL</th>
-            <th>Schließung</th>
-            <th>KW</th>
-            <th>Eröffnung</th>
-            <th>KW</th>
-            <th>VIP-Support</th>
+            <th class="medium">Teilschließung</th>
+            <th class="medium">Teileröffnung</th>
+            <th class="medium">Eröffnung</th>
+            <th class="medium">KW</th>
+            <th class="medium">VIP-Support</th>
           </tr>
         </thead>
         <tbody>
@@ -213,18 +212,17 @@
       <table id="2022-table" class="sortable">
         <thead>
           <tr>
-            <th class="long">Store</th>
-            <th>PLZ</th>
-            <th class="short">Ort</th>
-            <th class="medium">Straße</th>
-            <th class="long">Art</th>
-            <th class="short">F/C</th>
+            <th class="medium">Jahr</th>
+            <th class="medium">Store</th>
+            <th class="long">Adresse</th>
+            <th class="medium">Art</th>
             <th class="short">Variante</th>
+            <th class="medium">F/C</th>
             <th class="short">DL</th>
-            <th>Schließung</th>
-            <th>KW</th>
-            <th>Eröffnung</th>
-            <th>KW</th>
+            <th class="medium">Teilschließung</th>
+            <th class="medium">Teileröffnung</th>
+            <th class="medium">Eröffnung</th>
+            <th class="medium">KW</th>
           </tr>
         </thead>
         <tbody>
@@ -242,32 +240,20 @@
 
     // Make a GET request to the Google Sheets API to retrieve the data for the table
     $.ajax({
-      url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/A1:M28?key=${API_KEY}`,
+      url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Archiv2024!A1:L100?key=${API_KEY}`,
       type: 'GET',
       success: function (response) {
         // The response from the API includes the data for the table in the "values" property
         const data = response.values;
+
+        data.shift();
         // Iterate through the data and add a row to the table for each item
         data.forEach(function (item) {
 
-          try {// Determine the class name for the "status" cell based on its value
-            var statusClass = "";
-            if (item[1] === "OFFEN") {
-              statusClass = "done";
-            } else if (item[1] === "F/C") {
-              statusClass = "in-work";
-            } else {
-              statusClass = "not-started";
-            }
-          }
-          catch (e) {
-            console.log(e);
-          }
-
-          $('#data-table tbody').append(`
+          $('#2024-table tbody').append(`
             <tr>
               <td>${item[0]}</td>
-              <td class="${statusClass}">${item[1]}</td>
+              <td>${item[1]}</td>
               <td>${item[2]}</td>
               <td>${item[3]}</td>
               <td>${item[4]}</td>
@@ -278,7 +264,7 @@
               <td>${item[9]}</td>
               <td>${item[10]}</td>
               <td>${item[11]}</td>
-              <td>${item[12]}</td>
+
             </tr>
           `);
         });

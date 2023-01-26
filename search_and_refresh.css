@@ -31,7 +31,7 @@
 	/* Set the width of the search box */
 	height: 40px;
 	/* Set the height of the search box */
-	border-radius: 20px;
+	border-radius: 42px;
 	/* Add round corners to the search box using the border-radius property */
 	border: 2px solid var(--main-dark);
 	/* Add a border to the search box */
