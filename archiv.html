@@ -38,7 +38,11 @@
 
 
   <head>
-    <title>Rolloutmonitor</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <link rel="icon" href="Logo SOS IS GmbH Neu shadow_tif.webp">
     <link rel="icon" href="Logo SOS IS GmbH Neu shadow_tif.webp">
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
@@ -140,11 +144,11 @@
             <th class="short">Art</th>
             <th class="medium">Variante</th>
             <th class="medium">F/C</th>
-            <th class="short">DL</th>
+            <th class="medium">DL</th>
             <th class="medium">Teilschließung</th>
             <th class="medium">Teileröffnung</th>
             <th class="medium">Eröffnung</th>
-            <th class="medium">KW</th>
+            <th class="short">KW</th>
             <th class="medium">VIP-Support</th>
           </tr>
         </thead>
@@ -185,11 +189,11 @@
             <th class="short">Art</th>
             <th class="medium">Variante</th>
             <th class="medium">F/C</th>
-            <th class="short">DL</th>
+            <th class="medium">DL</th>
             <th class="medium">Teilschließung</th>
             <th class="medium">Teileröffnung</th>
             <th class="medium">Eröffnung</th>
-            <th class="medium">KW</th>
+            <th class="short">KW</th>
             <th class="medium">VIP-Support</th>
           </tr>
         </thead>
@@ -213,7 +217,7 @@
           // Make a GET request to the Google Sheets API to retrieve the data for the table
           $.ajax({
 
-            url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Archiv2023!A1:L100?key=${API_KEY}`,
+            url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Archiv2023!A1:L150?key=${API_KEY}`,
             type: 'GET',
             success: function (response) {
               $('#2023-table tbody').empty();
@@ -269,7 +273,7 @@
         const API_KEY = 'AIzaSyAgtyYzCyesKwKsBr1Qzee0jJoFMuwONtE';
         // Make a GET request to the Google Sheets API to retrieve the data for the table
         $.ajax({
-          url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Archiv2022!A1:L100?key=${API_KEY}`,
+          url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Archiv2022!A1:L150?key=${API_KEY}`,
           type: 'GET',
           success: function (response) {
             $('#2022-table tbody').empty();
