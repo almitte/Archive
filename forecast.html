@@ -101,9 +101,10 @@
     <div class="info-box">
       <div class="info-box__icon">i</div>
       <div class="info-box__text">
-        Diese Seite bietet Ihnen einen Überblick über alle geplanten Rolloutprojekte (NSO / IRLX). Die einzelnen
-        Bauvorhaben sind dabei nach dem jeweiligen Status sortiert. <br> In der Übersicht kann in allen Spalten über das
-        Suchfeld gefiltert werden. Änderungen werden dabei nur temporär vorgenommen. Nach dem Drücken des Buttons
+        Diese Seite bietet Ihnen einen Überblick über alle geplanten Rolloutprojekte (NSO / IRLX). <br> Über das
+        Suchfeld kann gezielt nach einzelnen Einträgen gesucht werden. Mit einem Klick auf einen der Spaltenköpfe kann
+        die Tabelle entsprechend sortiert werden. <br> Änderungen werden dabei nur temporär vorgenommen. Nach dem
+        Drücken des Buttons
         "Aktualisieren" wird die Übersicht aus dem Masterdokument neu geladen.
       </div>
     </div>
@@ -229,7 +230,7 @@
             const tableContainer = document.getElementById("scroll-1");
 
             if (table.offsetHeight > window.innerHeight * 0.5) {
-              tableContainer.style.height = "50vh";
+              tableContainer.style.height = "70vh";
             }
           }
         });
