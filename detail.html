@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Rolloutmonitor</title>
+  <title>Rollout Monitor</title>
   <style>
     :root {
       --font-big-size: 2rem;
@@ -67,7 +67,7 @@
     <img
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
       alt="McDonald's logo">
-    <h2>McDonald's Rolloutmonitor</h2>
+    <h2>McDonald's Rollout Monitor</h2>
   </div>
   <div class="right">
     <a href="index.html">Home</a>
@@ -100,9 +100,8 @@
     <div class="info-box">
       <div class="info-box__icon">i</div>
       <div class="info-box__text">
-        Diese Seite bietet Ihnen einen Überblick über alle laufenden Rolloutprojekte. <br>
-        Die Daten werden fortlaufend aktualisiert. Um immer die aktuellsten Daten zu erhalten, drücken
-        Sie bitte auf den Refresh Button.
+        Diese Seite bietet Ihnen einen Überblick über alle abgeschlossenen Rolloutprojekte der vergangenen Jahre. <br>
+        Nach dem Drücken des Buttons "Aktualisieren" wird die Übersicht aus dem Masterdokument neu geladen.
       </div>
     </div>
   </section id="home">
@@ -116,28 +115,30 @@
 
     </div>
     <div>
-      <table id="detail1-table" class="sortable">
-        <thead>
-          <tr>
-            <th class="long"></th>
-            <th>#01</th>
-            <th>#02</th>
-            <th>#03</th>
-            <th>#04</th>
-            <th>#05</th>
-            <th>#06</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <table id="detail1-table" class="sortable">
+          <thead>
+            <tr>
+              <th class="long"></th>
+              <th>#01</th>
+              <th>#02</th>
+              <th>#03</th>
+              <th>#04</th>
+              <th>#05</th>
+              <th>#06</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
 
+      </div>
     </div>
   </section id="detail1">
   <section id="detail2">
 
     <!-- Refresh and search container -->
-    <div class="refresh-search-container">
+    <div class="refresh-search-container" style="margin-top:30px">
       <!-- Refresh button -->
       <button class="refresh-button" onclick="loadDetail2();"><i class="fa fa-refresh"
           style="margin-right: 10px;"></i>Aktualisieren</button>
@@ -145,22 +146,24 @@
 
     </div>
     <div>
-      <table id="detail2-table" class="sortable">
-        <thead>
-          <tr>
-            <th class="long"></th>
-            <th>#07</th>
-            <th>#08</th>
-            <th>#09</th>
-            <th>#10</th>
-            <th>#11</th>
-            <th>#12</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <table id="detail2-table" class="sortable">
+          <thead>
+            <tr>
+              <th class="long"></th>
+              <th>#07</th>
+              <th>#08</th>
+              <th>#09</th>
+              <th>#10</th>
+              <th>#11</th>
+              <th>#12</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
 
+      </div>
     </div>
   </section id="detail2">
 

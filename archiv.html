@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Rolloutmonitor</title>
+  <title>Rollout Monitor</title>
   <style>
     :root {
       --font-big-size: 2rem;
@@ -41,7 +41,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Rolloutmonitor</title>
+  <title> Rollout Monitor</title>
   <link rel="icon" href="Logo SOS IS GmbH Neu shadow_tif.webp">
   <link rel="icon" href="Logo SOS IS GmbH Neu shadow_tif.webp">
   <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -66,7 +66,7 @@
     <img
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
       alt="McDonald's logo">
-    <h2>McDonald's Rolloutmonitor</h2>
+    <h2>McDonald's Rollout Monitor</h2>
   </div>
   <div class="middle">
     <p style="margin-left: 15px; font-weight: bold;">Jahr: </p>
@@ -106,8 +106,8 @@
       <div class="info-box__text">
         Diese Seite bietet Ihnen einen Überblick über alle abgeschlossenen Rolloutprojekte der vergangenen Jahre.
         <br>
-        Die Daten werden fortlaufend aktualisiert. Um immer die aktuellsten Daten zu erhalten, drücken
-        Sie bitte auf den Refresh Button.
+        In der Übersicht kann in allen Spalten über das Suchfeld gefiltert werden. Änderungen werden dabei nur temporär
+        vorgenommen. Nach dem Drücken des Buttons "Aktualisieren" wird die Übersicht aus dem Masterdokument geladen.
 
       </div>
     </div>
@@ -136,25 +136,29 @@
 
 
     <div>
-      <table id="2023-table" class="sortable">
-        <thead>
-          <tr>
-            <th class="medium">Store</th>
-            <th class="long">Adresse</th>
-            <th class="short">Art</th>
-            <th class="medium">Variante</th>
-            <th class="medium">F/C</th>
-            <th class="medium">DL</th>
-            <th class="medium">Teilschließung</th>
-            <th class="medium">Teileröffnung</th>
-            <th class="medium">Eröffnung</th>
-            <th class="short">KW</th>
-            <th class="medium">VIP-Support</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <div class="table-scroll" id="scroll-1">
+          <table id="2023-table" class="sortable">
+            <thead>
+              <tr>
+                <th class="medium">Store</th>
+                <th class="long">Adresse</th>
+                <th class="short">Art</th>
+                <th class="medium">Variante</th>
+                <th class="medium">F/C</th>
+                <th class="medium">DL</th>
+                <th class="medium">Teilschließung</th>
+                <th class="medium">Teileröffnung</th>
+                <th class="medium">Eröffnung</th>
+                <th class="short">KW</th>
+                <th class="medium">VIP-Support</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
     </div>
   </section>
@@ -181,26 +185,29 @@
 
 
     <div>
-      <table id="2022-table" class="sortable">
-        <thead>
-          <tr>
-            <th class="medium">Store</th>
-            <th class="long">Adresse</th>
-            <th class="short">Art</th>
-            <th class="medium">Variante</th>
-            <th class="medium">F/C</th>
-            <th class="medium">DL</th>
-            <th class="medium">Teilschließung</th>
-            <th class="medium">Teileröffnung</th>
-            <th class="medium">Eröffnung</th>
-            <th class="short">KW</th>
-            <th class="medium">VIP-Support</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-
+      <div class="table-wrapper">
+        <div class="table-scroll" id="scroll-2">
+          <table id="2022-table" class="sortable">
+            <thead>
+              <tr>
+                <th class="medium">Store</th>
+                <th class="long">Adresse</th>
+                <th class="short">Art</th>
+                <th class="medium">Variante</th>
+                <th class="medium">F/C</th>
+                <th class="medium">DL</th>
+                <th class="medium">Teilschließung</th>
+                <th class="medium">Teileröffnung</th>
+                <th class="medium">Eröffnung</th>
+                <th class="short">KW</th>
+                <th class="medium">VIP-Support</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -258,6 +265,12 @@
             </tr>
           `);
               });
+              const table = document.getElementById("2023-table");
+              const tableContainer = document.getElementById("scroll-1");
+
+              if (table.offsetHeight > window.innerHeight * 0.5) {
+                tableContainer.style.height = "50vh";
+              }
             }
           });
         })
@@ -314,6 +327,12 @@
               </tr>
             `);
             });
+            const table2 = document.getElementById("2022-table");
+            const tableContainer2 = document.getElementById("scroll-2");
+
+            if (table2.offsetHeight > window.innerHeight * 0.5) {
+              tableContainer2.style.height = "50vh";
+            }
           }
         });
       }
@@ -394,6 +413,7 @@
         load2022();
         load2023();
         form.remove();
+
       } else {
         document.getElementById("myForm").style.display = "block";
         const passwordInput = document.querySelector("input[name='psw']");
@@ -417,6 +437,26 @@
 
 
   </script>
+  <script>
+
+    const table = document.getElementById("2023-table");
+    const tableContainer = document.getElementById("scroll-1");
+
+    const observer = new MutationObserver(function () {
+      if (table.offsetHeight > window.innerHeight * 0.5) {
+        tableContainer.style.height = "50vh";
+        tableContainer.style.overflow = "scroll";
+        tableContainer.style.borderBottom = "1px solid black";
+      }
+    });
+
+    observer.observe(table, {
+      childList: true,
+      subtree: true
+    });
+
+  </script>
+
 
   <script>
     function checkPassword() {

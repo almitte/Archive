@@ -27,7 +27,7 @@
 	padding: 15px;
 	margin: 5px 0 10px 0;
 	border: none;
-	background: #f1f1f1;
+	background: #e1e1e1;
 	border-radius: 42px;
 }
 
@@ -35,6 +35,7 @@
 .form-container input[type="password"]:focus {
 	background-color: #ddd;
 	outline: none;
+	box-shadow: 0px 0px 14px -2px #949494;
 }
 
 /* Set a style for the submit/login button */

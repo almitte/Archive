@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Rolloutmonitor</title>
+  <title>Rollout Monitor</title>
   <style>
     :root {
       --font-big-size: 2rem;
@@ -67,7 +67,7 @@
     <img
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
       alt="McDonald's logo">
-    <h2>McDonald's Rolloutmonitor</h2>
+    <h2>McDonald's Rollout Monitor</h2>
   </div>
   <div class="right">
     <a href="index.html">Home</a>
@@ -101,11 +101,10 @@
     <div class="info-box">
       <div class="info-box__icon">i</div>
       <div class="info-box__text">
-        Diese Seite bietet Ihnen einen Überblick über alle geplanten Rolloutprojekte. Diese sind
-        nach ihrem
-        spezifischen Projektstatus sortiert aufgelistet. <br>
-        Die Daten werden fortlaufend aktualisiert. Um immer die aktuellsten Daten zu erhalten, drücken
-        Sie bitte auf den Refresh Button.
+        Diese Seite bietet Ihnen einen Überblick über alle geplanten Rolloutprojekte (NSO / IRLX). Die einzelnen
+        Bauvorhaben sind dabei nach dem jeweiligen Status sortiert. <br> In der Übersicht kann in allen Spalten über das
+        Suchfeld gefiltert werden. Änderungen werden dabei nur temporär vorgenommen. Nach dem Drücken des Buttons
+        "Aktualisieren" wird die Übersicht aus dem Masterdokument neu geladen.
       </div>
     </div>
   </section id="home">
@@ -125,27 +124,31 @@
       </div>
     </div>
     <div>
-      <table id="forecast-table" class="sortable">
-        <thead>
-          <tr>
-            <th class="status">Status</th>
-            <th class="medium">Store</th>
-            <th class="long">Adresse</th>
-            <th class="short">Art</th>
-            <th class="medium">Variante</th>
-            <th class="medium">F/C</th>
-            <th class="short">DL</th>
-            <th class="medium">Abbau</th>
-            <th class="medium">KW</th>
-            <th class="medium">Eröffnung</th>
-            <th class="medium">KW</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-
+      <div class="table-wrapper">
+        <div class=table-scroll id="scroll-1">
+          <table id="forecast-table" class="sortable">
+            <thead>
+              <tr>
+                <th class="status">Status</th>
+                <th class="medium">Store</th>
+                <th class="long">Adresse</th>
+                <th class="short">Art</th>
+                <th class="medium">Variante</th>
+                <th class="medium">F/C</th>
+                <th class="short">DL</th>
+                <th class="medium">Abbau</th>
+                <th class="medium">KW</th>
+                <th class="medium">Eröffnung</th>
+                <th class="medium">KW</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
+
   </section>
 
   <script>
@@ -222,6 +225,12 @@
             </tr>
           `);
             });
+            const table = document.getElementById("forecast-table");
+            const tableContainer = document.getElementById("scroll-1");
+
+            if (table.offsetHeight > window.innerHeight * 0.5) {
+              tableContainer.style.height = "50vh";
+            }
           }
         });
       }
