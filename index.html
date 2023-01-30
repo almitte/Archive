@@ -44,6 +44,30 @@
 		color: white;
 	}
 
+	.game-button {
+		border-radius: 26px;
+		background-color: var(--accent-bright);
+		border: none;
+		margin-left: 5px;
+		font-size: 15px;
+		padding: 8px 16px;
+		color: white;
+		display: none;
+	}
+
+	.game-button:hover {
+		border-radius: 26px;
+		background-color: var(--accent-bright);
+		border: none;
+		margin-left: 5px;
+		font-size: 15px;
+		padding: 8px 16px;
+		color: white;
+		font-weight: bold;
+		right: 0;
+
+	}
+
 	.contact-button:hover {
 		font-weight: bold;
 	}
@@ -93,7 +117,7 @@
 	<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
 
-<body class="is-boxed has-animations">
+<body onload="showGame()" class="is-boxed has-animations">
 
 
 	<div class="body-wrap boxed-container">
@@ -202,7 +226,7 @@
 
 		</main>
 
-		<div style="background-color: var(--main-medium);">
+		<div style="background-color: var(--main-medium);  text-align:right">
 
 			<div style="padding:20px; float:center; text-align: center;">
 
@@ -216,12 +240,36 @@
 					Telefon: 0172/3841911
 					(Ansprechpartner: Torsten Mitte)
 				</p>
+				<hr>
+
 
 			</div>
+			<button class="game-button" id=button onclick="location.href='minigame.html'"
+				style="margin-right: 20px; margin-bottom: 20px; margin-top: 0px;">MiniGame</button>
 		</div>
 	</div>
 
 	<script src="dist/js/main.min.js"></script>
+	<script>
+		function showGame() {
+			if (checkPassword()) {
+				document.getElementById("button").style.display = "inline-block";
+			} else {
+				document.getElementById("button").style.display = "none";
+			}
+		}
+	</script>
+	<script>
+		function checkPassword() {
+			const passwordIsCorrect = sessionStorage.getItem("passwordIsCorrect");
+			if (passwordIsCorrect === "true") {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+	</script>
 </body>
 
 </html>
