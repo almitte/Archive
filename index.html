@@ -45,8 +45,11 @@
 	}
 
 	.game-button {
+		position: absolute;
+		right: 0;
+		bottom: 0;
 		border-radius: 26px;
-		background-color: var(--accent-bright);
+		background-color: rgb(192, 192, 192);
 		border: none;
 		margin-left: 5px;
 		font-size: 15px;
@@ -57,7 +60,7 @@
 
 	.game-button:hover {
 		border-radius: 26px;
-		background-color: var(--accent-bright);
+		background-color: var(--main-dark);
 		border: none;
 		margin-left: 5px;
 		font-size: 15px;
@@ -240,12 +243,13 @@
 					Telefon: 0172/3841911
 					(Ansprechpartner: Torsten Mitte)
 				</p>
+				<div><button class="game-button" id=button onclick="location.href='minigame.html'"
+						style="margin-right: 20px; margin-bottom: 20px; margin-top: 0px;">Dont Press</button></div>
 				<hr>
 
 
 			</div>
-			<button class="game-button" id=button onclick="location.href='minigame.html'"
-				style="margin-right: 20px; margin-bottom: 20px; margin-top: 0px;">MiniGame</button>
+
 		</div>
 	</div>
 
